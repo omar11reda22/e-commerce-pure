@@ -203,7 +203,7 @@ function SaveDataToLocalStorage(database) {
 
 
 // load data from local storage
-function GetDataFromLocalStorage(database) {
+export function GetDataFromLocalStorage(database) {
     for (var key in database) {
         database[key] = JSON.parse(localStorage.getItem(key));
     }
@@ -211,7 +211,7 @@ function GetDataFromLocalStorage(database) {
 }
 
 // Add New User
-function AddUser(user) {
+export function AddUser(user) {
     if (GetUserById(user.id)) {
         console.log("already exist")
     } else {
@@ -222,7 +222,7 @@ function AddUser(user) {
 
 // get user by id
 
-function GetUserById(id) {
+export function GetUserById(id) {
     let users = JSON.parse(localStorage.getItem("users"));
     let user = null;
     users.forEach((Element) => {
@@ -235,7 +235,7 @@ function GetUserById(id) {
 
 // get user by email
 
-function GetUserByEmail(email) {
+export function GetUserByEmail(email) {
     let users = JSON.parse(localStorage.getItem("users"));
     let user = null;
     users.forEach((Element) => {
@@ -247,13 +247,13 @@ function GetUserByEmail(email) {
 
 
 // get all Products 
-function GetAllProducts() {
+export function GetAllProducts() {
     return JSON.parse(localStorage.getItem("products"));
 }
 
 
 // get product by id
-function GetProductById(id) {
+export function GetProductById(id) {
     let product;
     GetAllProducts().forEach((prod) => {
         if (prod.id == id) {
@@ -266,7 +266,7 @@ function GetProductById(id) {
 
 
 // add product 
-function AddProduct(product) {
+export function AddProduct(product) {
     if (!GetProductById(product.id)) {
         database.products.push(product);
         SaveDataToLocalStorage(database);
@@ -277,7 +277,7 @@ function AddProduct(product) {
 
 
 // remove product => check if this produc inside an orders 
-function RemoveProduct(product) {
+export function RemoveProduct(product) {
     //console.log(product);
     let updatedProds = database.products.filter((element) => element.id !== product.id)
     //console.log(updatedProds)
@@ -286,13 +286,13 @@ function RemoveProduct(product) {
 }
 
 // Get All Brands 
-function GetAllBrands() {
+export function GetAllBrands() {
     return JSON.parse(localStorage.getItem("brands"));
 }
 
 
 // get brand by id 
-function GetBrandById(id) {
+export  function GetBrandById(id) {
     let brand = null;
     GetAllBrands().forEach((element) => {
         if (element.id == id) {
@@ -304,7 +304,7 @@ function GetBrandById(id) {
 
 
 // add new brand
-function AddBrand(brand) {
+export function AddBrand(brand) {
     if (!GetBrandById(brand.id)) {
         database.brands.push(brand);
         SaveDataToLocalStorage(database);
@@ -314,7 +314,7 @@ function AddBrand(brand) {
 }
 
 // remove brand
-function RemoveBrand(brand) {
+export function RemoveBrand(brand) {
     database.products.forEach((prod) => {
         if (prod.brandId == brand.id) {
             console.log("Can not Make this operation");
@@ -326,4 +326,3 @@ function RemoveBrand(brand) {
 
     })
 }
-//
