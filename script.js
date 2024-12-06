@@ -326,5 +326,4 @@ function RemoveBrand(brand) {
 
     })
 }
-
-
+//
