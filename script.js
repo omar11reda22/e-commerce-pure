@@ -15,18 +15,174 @@ const database = {
         { orderId: 101, items: [{ id: 1, price: 199.99, quantity: 2 }, { id: 2, price: 149.99, quantity: 1 }], customerId: 1, totalPrice: 549.97, date: "2023-12-03", status: "Shipped", customerDetails: { firstName: "John", lastName: "Doe", address: { street: "123 Main St", city: "Mansoura", zipCode: "12345" }, email: "johndoe@example.com", phone: "123-456-7890" } },
         { orderId: 102, items: [{ id: 3, price: 599.99, quantity: 1 }, { id: 1, price: 199.99, quantity: 3 }], customerId: 1, totalPrice: 1199.95, date: "2023-12-04", status: "Processing", customerDetails: { firstName: "John", lastName: "Doe", address: { street: "123 Main St", city: "Mansoura", zipCode: "12345" }, email: "johndoe@example.com", phone: "123-456-7890" } },
         { orderId: 103, items: [{ id: 2, price: 149.99, quantity: 2 }, { id: 4, price: 299.99, quantity: 1 }], customerId: 1, totalPrice: 599.97, date: "2023-12-05", status: "Shipped", customerDetails: { firstName: "John", lastName: "Doe", address: { street: "123 Main St", city: "Mansoura", zipCode: "12345" }, email: "johndoe@example.com", phone: "123-456-7890" } },
-        // Add 27 more orders here
     ],
     products: [
-        { id: 1, name: "Classic Watch", price: 199.99, sales: 50, stock: 20, brandId: 1, date: "2023-10-01" },
-        { id: 2, name: "Sport Watch", price: 149.99, sales: 100, stock: 30, brandId: 2, date: "2023-11-15" },
-        { id: 3, name: "Luxury Watch", price: 599.99, sales: 20, stock: 15, brandId: 1, date: "2023-12-05" },
-        { id: 4, name: "Smart Watch", price: 299.99, sales: 30, stock: 25, brandId: 2, date: "2023-11-18" },
-        { id: 5, name: "Fashion Watch", price: 119.99, sales: 40, stock: 50, brandId: 3, date: "2023-12-06" },
-        { id: 6, name: "Sports Watch", price: 149.99, sales: 60, stock: 35, brandId: 3, date: "2023-10-10" },
-        { id: 7, name: "Gold Watch", price: 399.99, sales: 25, stock: 40, brandId: 4, date: "2023-12-08" },
-        { id: 8, name: "Vintage Watch", price: 229.99, sales: 70, stock: 30, brandId: 4, date: "2023-10-05" },
-        // Add 7 more products here
+        {
+            id: 1,
+            name: "Classic Watch",
+            price: 199.99,
+            sales: 50,
+            stock: 20,
+            brandId: 1,
+            date: "2023-10-01",
+            images: ["classic1.jpg", "classic2.jpg", "classic3.jpg"],
+            gender: "Men"
+        },
+        {
+            id: 2,
+            name: "Sport Watch",
+            price: 149.99,
+            sales: 100,
+            stock: 30,
+            brandId: 2,
+            date: "2023-11-15",
+            images: ["sport1.jpg", "sport2.jpg"],
+            gender: "Unisex"
+        },
+        {
+            id: 3,
+            name: "Luxury Watch",
+            price: 599.99,
+            sales: 20,
+            stock: 15,
+            brandId: 1,
+            date: "2023-12-05",
+            images: ["luxury1.jpg", "luxury2.jpg", "luxury3.jpg", "luxury4.jpg"],
+            gender: "Women"
+        },
+        {
+            id: 4,
+            name: "Smart Watch",
+            price: 299.99,
+            sales: 30,
+            stock: 25,
+            brandId: 2,
+            date: "2023-11-18",
+            images: ["smart1.jpg"],
+            gender: "Unisex"
+        },
+        {
+            id: 5,
+            name: "Fashion Watch",
+            price: 119.99,
+            sales: 40,
+            stock: 50,
+            brandId: 3,
+            date: "2023-12-06",
+            images: ["fashion1.jpg", "fashion2.jpg"],
+            gender: "Women"
+        },
+        {
+            id: 6,
+            name: "Sports Watch",
+            price: 149.99,
+            sales: 60,
+            stock: 35,
+            brandId: 3,
+            date: "2023-10-10",
+            images: ["sports1.jpg", "sports2.jpg"],
+            gender: "Men"
+        },
+        {
+            id: 7,
+            name: "Gold Watch",
+            price: 399.99,
+            sales: 25,
+            stock: 40,
+            brandId: 4,
+            date: "2023-12-08",
+            images: ["gold1.jpg", "gold2.jpg"],
+            gender: "Women"
+        },
+        {
+            id: 8,
+            name: "Vintage Watch",
+            price: 229.99,
+            sales: 70,
+            stock: 30,
+            brandId: 4,
+            date: "2023-10-05",
+            images: ["vintage1.jpg", "vintage2.jpg", "vintage3.jpg"],
+            gender: "Unisex"
+        },
+        {
+            id: 9,
+            name: "Eco Watch",
+            price: 99.99,
+            sales: 80,
+            stock: 60,
+            brandId: 5,
+            date: "2023-11-20",
+            images: ["eco1.jpg", "eco2.jpg"],
+            gender: "Unisex"
+        },
+        {
+            id: 10,
+            name: "Digital Watch",
+            price: 129.99,
+            sales: 45,
+            stock: 50,
+            brandId: 5,
+            date: "2023-12-10",
+            images: ["digital1.jpg", "digital2.jpg"],
+            gender: "Men"
+        },
+        {
+            id: 11,
+            name: "Minimal Watch",
+            price: 179.99,
+            sales: 55,
+            stock: 25,
+            brandId: 1,
+            date: "2023-12-12",
+            images: ["minimal1.jpg", "minimal2.jpg", "minimal3.jpg"],
+            gender: "Women"
+        },
+        {
+            id: 12,
+            name: "Chronograph Watch",
+            price: 249.99,
+            sales: 35,
+            stock: 40,
+            brandId: 2,
+            date: "2023-10-15",
+            images: ["chrono1.jpg", "chrono2.jpg"],
+            gender: "Men"
+        },
+        {
+            id: 13,
+            name: "Elegant Watch",
+            price: 329.99,
+            sales: 20,
+            stock: 30,
+            brandId: 3,
+            date: "2023-11-25",
+            images: ["elegant1.jpg", "elegant2.jpg", "elegant3.jpg"],
+            gender: "Women"
+        },
+        {
+            id: 14,
+            name: "Outdoor Watch",
+            price: 89.99,
+            sales: 100,
+            stock: 75,
+            brandId: 4,
+            date: "2023-11-28",
+            images: ["outdoor1.jpg"],
+            gender: "Unisex"
+        },
+        {
+            id: 15,
+            name: "Retro Watch",
+            price: 139.99,
+            sales: 65,
+            stock: 45,
+            brandId: 5,
+            date: "2023-12-15",
+            images: ["retro1.jpg", "retro2.jpg"],
+            gender: "Men"
+        }
+
     ],
     brands: [
         { id: 1, name: "Elegant Timepieces", images: ["elegant1.jpg", "elegant2.jpg"] },
