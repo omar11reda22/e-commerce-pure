@@ -1,0 +1,143 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+
+.nav {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100%; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  padding: 20px 40px; 
+  z-index: 10; 
+  background-color: transparent; 
+  color: rgb(146, 152, 199);
+  transition: all 0.5s; 
+}
+
+.nav:hover {
+  background-color: white;
+  color: black;
+}
+
+.nav ul {
+  list-style-type: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav ul li {
+  cursor: pointer;
+  transition: color 0.3s ease; 
+ 
+}
+
+
+
+
+.nav ul li:hover {
+  color: rgba(96, 45, 45, 0.991); 
+}
+
+.logo a {
+  text-decoration: none;
+  font-family: "Cambria", serif;
+  font-size: 20px;
+  font-weight: bold;
+
+  
+}
+
+
+
+
+.bg-image {
+  background-image: url("/E-commerce/imgs/mainImage.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 80vh;
+}
+
+.product {
+  padding: 15px;
+  text-align: center;
+ border: none;
+  
+}
+
+.product:hover .product img{
+    opacity: .4;
+    transition: .2s ease-in;
+}
+.product img {
+  width: 100%;
+  height: auto;
+  filter: blur(10px);
+  position: relative;
+  
+}
+.product img:hover{
+    opacity: .4;
+    transition: .2s ease-in;
+
+}
+.product:hover .bttn{
+    opacity: 1;
+    transition: .5s;
+    transition-timing-function: ease-in-out;
+    transition-delay: .2s;
+
+}
+
+.bttn{
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 7px;
+    background-color: black;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    position: absolute;
+    bottom: 230px;
+    opacity: 0;
+
+}
+.bttn:hover{
+    background-color: white;
+    color: black;
+    transition: .5s;
+}
+.bttn:hover .product img{
+    opacity: .2;
+}
+
+.section-content {
+  background-color: hsl(210, 17%, 98%);
+  padding: 20px;
+
+  text-align: center;
+  height: 100%;
+}
+
+.product:hover {
+  transition: 1s;
+  
+}
+
+.product img:hover{
+    transform: scale(1.09);
+    transition: .5s;
+
+}
+
+footer a:hover {
+  color: #007bff; /* Adjust to your theme color */
+  text-decoration: underline;
+}

@@ -1,0 +1,42 @@
+.auth-container {
+    max-width: 900px;  
+    margin: 50px auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.btn-primary {
+    background-color: #001E3C;
+}
+
+.btn-primary:hover {
+    background-color: #003366;
+}
+
+.auth-box {
+    padding: 20px;
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border-color: #001E3C;
+}
+
+.icon-eye {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.anti-robot {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    gap: 10px;
+}
+
