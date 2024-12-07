@@ -2,6 +2,8 @@
 const email = document.getElementById("email");
 const password = document.getElementById("password");
 
+
+
 //email validation
 function isValidEmail(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -10,8 +12,13 @@ function isValidEmail(email) {
 
 //password validation
 function isValidPassword(password) {
-    const passwprdRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-    return passwprdRegex.test(password);
+    // const passwprdRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    // const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&_\-#^])[A-Za-z\d@$!%*?&_\-#^]{8,}$/;
+
+    console.log(passwordRegex.test(password));
+
+    return passwordRegex.test(password);
 }
 
 function authenticateUser() {
