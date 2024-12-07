@@ -1,3 +1,7 @@
+// current user 
+
+
+
 const database = {
     users: [
         { id: 1, name: "John Doe", email: "johndoe@example.com", password: "securepassword123", cart: [], accountType: "Customer", products: [], orderIds: [101, 102, 103] },
@@ -292,7 +296,7 @@ export function GetAllBrands() {
 
 
 // get brand by id 
-export  function GetBrandById(id) {
+export function GetBrandById(id) {
     let brand = null;
     GetAllBrands().forEach((element) => {
         if (element.id == id) {
@@ -326,3 +330,27 @@ export function RemoveBrand(brand) {
 
     })
 }
+
+
+class User {
+    constructor(_id, _name, _email, _password, _accountType) {
+        this.id = _id;
+        this.name = _name;
+        this.email = _name;
+        this.password = _password;
+        this.accountType = _accountType;
+    }
+}
+
+
+let element = new User(10, "Nader", "abanoubmagdy959595@gmail.com", 123, "admin");
+console.log(element);
+
+
+
+
+
+
+
+
+
