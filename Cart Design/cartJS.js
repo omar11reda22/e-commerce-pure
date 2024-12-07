@@ -182,3 +182,5 @@ function getTotal() {
     // Update the subtotal display in the tfoot section
     subtotalCell.textContent = total.toFixed(2);
 }
+
+//
