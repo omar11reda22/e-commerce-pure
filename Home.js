@@ -43,13 +43,14 @@ window.addEventListener("load", function () {
 
   // show all brands
   let brandd = this.document.getElementById("brand");
-  console.log(JSON.parse(this.localStorage.getItem("products")));
+ // console.log(JSON.parse(this.localStorage.getItem("products")));
 
   let brands = JSON.parse(localStorage.getItem("brands"));
-
+//console.log(brands);
   brands.forEach((element) => {
-    //console.log(element);
-    brand.innerHTML += `
+    //console.log(element.id);
+   // brandd.innerHTML = "fuck";
+    brandd.innerHTML += `
     <div class = "col-lg col-md-3 col-sm-4 col-6">
       <a class = "show-brand" href="" data-id = "${element.id}"><img style="height: 200px; width: 200px;" src="${element.images[0]}" class="img-fluid rounded" alt="">
 </a>
