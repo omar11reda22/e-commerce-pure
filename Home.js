@@ -59,17 +59,15 @@ window.addEventListener("load", function () {
     `;
   });
 
-  // go to brands 
-  let brandshow = this.document.querySelectorAll('.show-brand');
-  brandshow.forEach(brnd => {
-brnd.addEventListener('click',function(e){
-    e.preventDefault();
-let brandid = e.currentTarget.dataset.id;
-window.location.href = `brand-detail.html?id=${brandid}`;
-
-}); // end of event 
+  // go to brands
+  let brandshow = this.document.querySelectorAll(".show-brand");
+  brandshow.forEach((brnd) => {
+    brnd.addEventListener("click", function (e) {
+      e.preventDefault();
+      let brandid = e.currentTarget.dataset.id;
+      window.location.href = `brand-detail.html?id=${brandid}`;
+    }); // end of event
   });
-
 
   // show a best seller
 
@@ -132,7 +130,7 @@ window.location.href = `brand-detail.html?id=${brandid}`;
   btn.forEach((button) => {
     button.addEventListener("click", function (e) {
       productid = e.target.dataset.id;
-      window.location.href = `product-details.html?id=${productid}`;
+      window.location.href = `/E-commerce/Product Details/details.html?id=${productid}`;
     }); // end of event
   }); // end of loaping
-}); // end of load 
+}); // end of load
