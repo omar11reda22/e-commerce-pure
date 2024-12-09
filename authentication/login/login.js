@@ -39,6 +39,7 @@ document.getElementById("login").addEventListener("submit", function (e) {
     e.preventDefault();
     passwordError.innerHTML = "password is required";
     passwordinput.style.border = "2px solid red";
+    isvalid = false;
   } else {
     passwordError.innerHTML = "";
     passwordinput.style.border = "";
@@ -48,6 +49,7 @@ document.getElementById("login").addEventListener("submit", function (e) {
     e.preventDefault();
     passwordError.innerHTML = "this password is not matching";
     passwordinput.style.border = "2px solid red";
+    isvalid = false;
   } else {
     passwordError.innerHTML = "";
     passwordinput.style.border = "";
@@ -57,7 +59,10 @@ document.getElementById("login").addEventListener("submit", function (e) {
   if (isvalid) {
     // need passing mail to home page
     // hello mail
-    window.location.href = `/E-commerce/Home.html?email = ${encodeURIComponent(email.value)}`; // send mail to url 
+    sessionStorage.setItem("email", email.value);
+    window.location.href = `/E-commerce/Home.html?email = ${encodeURIComponent(
+      email.value
+    )}`; // send mail to url
   }
 });
 
@@ -85,14 +90,15 @@ function checkpassword(email, password) {
   let users = JSON.parse(localStorage.getItem("users"));
   let user = users.find((p) => p.email == email);
   if (!user) {
-    //  console.log("this male is not found");
+    //   console.log("this male is not found");
     return false;
   } else if (user.password !== password) {
-    //console.log("not matching");
+    //  console.log("not matching");
+    return false;
   } else {
-    //console.log("matching");
+    console.log("matching");
     return true;
   }
 }
 
-//checkpassword("johndoe@example.com", "securepassword123");
+//checkpassword("omaraladeeb45@gmail.com", "Omar@reda2468");

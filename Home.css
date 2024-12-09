@@ -29,18 +29,12 @@ html {
 
 .nav {
   position: fixed;
-  top: 0;
-  left: 0;
+  top: -2%;
+  left: 1%;
   width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 14px;
+
   padding: 20px 40px;
   z-index: 10;
-  background-color: transparent;
-  color: white;
-  transition: all 0.5s;
 }
 
 /* .nav:hover {
@@ -245,7 +239,18 @@ html {
 }
 
 
-
+.navbar-brand {
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+    .navbar-nav .nav-link {
+      font-size: 1rem;
+    }
+    .sign-out {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
 
 
 

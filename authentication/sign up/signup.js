@@ -94,7 +94,25 @@ formaction.addEventListener("submit", function (e) {
     // need saving in database [localstorage]
     // need asend a name in url to show it in home page 
     
+    // save in currentuser + session + users
 
+    // session 
+    sessionStorage.setItem('firstname',firstName.value);
+    sessionStorage.setItem('lastname',lastName.value);
+    sessionStorage.setItem('email',email.value);
+    alert("saving in session id done");
+    // saving in locastorage [users]
+    let users = JSON.parse(localStorage.getItem("users"));
+    console.log(users);
+    const newuser = {
+      firstName:firstName.value,
+      lastName: lastName.value,
+      email:email.value,
+      password:password.value
+    }
+    users.push(newuser); 
+    localStorage.setItem('users',JSON.stringify(users));
+    alert("saving in localstorage is done ");
 
 
 

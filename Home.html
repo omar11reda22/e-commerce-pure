@@ -15,6 +15,8 @@
       href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
       rel="stylesheet"
     />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
     <link
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
   rel="stylesheet"
@@ -30,28 +32,28 @@
     <script src="Home.js"></script>
   </head>
   <script>
-    $(function(){
+//     $(function(){
 
-$("#nav").hover(function(){
-//console.log("say hello");
-//$(this).css("background-color: white").fadeIn()
-$(this).css("color" , "black");
-$(this).css("background-color" , "white").fadeIn(
-{
+// $("#nav").hover(function(){
+// //console.log("say hello");
+// //$(this).css("background-color: white").fadeIn()
+// $(this).css("color" , "black");
+// $(this).css("background-color" , "white").fadeIn(
+// {
 
-duration :3000,
-easing:"swing",
-}
-);
-},function(){
+// duration :3000,
+// easing:"swing",
+// }
+// );
+// },function(){
 
-  $(this).css("background-color" , "").fadeIn();
-    $(this).css("color","white");
-}
+//   $(this).css("background-color" , "").fadeIn();
+//     $(this).css("color","white");
+// }
 
-); // end of event when hover 
+// ); // end of event when hover 
 
-    }); // end of loading jquery 
+//     }); // end of loading jquery 
   </script>
   <body>
     <section class="Parent-hello">
@@ -66,44 +68,32 @@ easing:"swing",
      
       <div class="container infoo">
        
-        <section class="nav" id="nav">
-          <div class="nav-left">
-            <ul>
-              <li>Brands</li>
-              <li>Contact US</li>
-            </ul>
-          </div>
-          <div class="logo">
-            <a href="#" style="color: white">LC Wagigi</a>
-          </div>
-          <div class="nav-right">
-            <ul>
-              <li>New arrival</li>
-              <li>Best sallers</li>
-              <li><i class="fa-solid fa-location-dot"></i></li>
-              <li><a class="lgn" href="/E-commerce/authentication/login/login.html"><i class="fa-solid fa-user"></i></a></li>
-            </ul>
-          </div>
-
-<div class="dropdown dropdown-small">
-      <button
-        class="btn btn-secondary dropdown-toggle"
-        type="button"
-        id="dropdownMenuButton"
-        data-bs-toggle="dropdown"
-        aria-expanded="false"
-      >
-        Menu
-      </button>
-      <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton">
-        <li><a class="dropdown-item" href="#">Home</a></li>
-        <li><a class="dropdown-item" href="#">Contact US</a></li>
-        <li><a class="dropdown-item" href="#">New Arrival</a></li>
-        <li><a class="dropdown-item" href="#">Best Sellers</a></li>
-        <li><a class="dropdown-item" href="#"><i class="fa-solid fa-location-dot"></i> Location</a></li>
-        <li><a class="dropdown-item" href="/E-commerce/authentication/login/login.html"><i class="fa-solid fa-user"></i> User</a></li>
-      </ul>
+        <section class="navv" id="navv">
+          <nav class="navbar navbar-expand-lg  text-white">
+  <div class="container-fluid">
+    <!-- Left side -->
+    <div class="navbar-nav me-auto">
+      <a class="nav-link text-white" href="#">Brands</a>
+      <a class="nav-link text-white" href="#">Contact Us</a>
     </div>
+
+    <!-- Center -->
+    <a class="navbar-brand mx-auto text-center text-white" href="#">
+      LC WAGIGI
+    </a>
+
+    <!-- Right side -->
+    <div class="navbar-nav ms-auto">
+     
+      <a class="nav-link text-white" href="#">Best Seller</a>
+      <a class="nav-link text-white" href="#">New Arrival</a>
+       <a class="nav-link text-white" href="/E-commerce/authentication/login/login.html" title="Sign In">
+        <i class="bi bi-person"></i>
+      </a>
+    </div>
+  </div>
+</nav>
+
 
 
         </section>
@@ -186,9 +176,9 @@ easing:"swing",
 </section>
 
 
-   
+  
 <section class="about">
- <h1 class="text-center mb-4">About US</h1>
+<h1 class="text-center mb-4">About US</h1>
   <hr class="mx-auto" style="width: 150px;">
 </section>
 
@@ -260,7 +250,7 @@ easing:"swing",
     </div>
   </footer>
 
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 
   </body>

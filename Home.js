@@ -43,13 +43,13 @@ window.addEventListener("load", function () {
 
   // show all brands
   let brandd = this.document.getElementById("brand");
- // console.log(JSON.parse(this.localStorage.getItem("products")));
+  // console.log(JSON.parse(this.localStorage.getItem("products")));
 
   let brands = JSON.parse(localStorage.getItem("brands"));
-//console.log(brands);
+  //console.log(brands);
   brands.forEach((element) => {
     //console.log(element.id);
-   // brandd.innerHTML = "fuck";
+    // brandd.innerHTML = "fuck";
     brandd.innerHTML += `
     <div class = "col-lg col-md-3 col-sm-4 col-6">
       <a class = "show-brand" href="" data-id = "${element.id}"><img style="height: 200px; width: 200px;" src="${element.images[0]}" class="img-fluid rounded" alt="">
@@ -134,4 +134,57 @@ window.addEventListener("load", function () {
       window.location.href = `/E-commerce/Product Details/details.html?id=${productid}`;
     }); // end of event
   }); // end of loaping
+
+  // get email from session
+
+  let navv = this.document.getElementById("navv");
+
+  let emailuser = this.sessionStorage.getItem("email");
+  if (emailuser === null) {
+    console.log("empty");
+  } else {
+    //this.alert("nav will removing ");
+    navv.style.display = "block";
+    navv.innerHTML = `
+    
+    <nav class="navbar navbar-expand-lg text-white " >
+    <div class="container-fluid">
+      <!-- Left side -->
+      <div class="navbar-nav me-auto">
+        <a class="nav-link text-white" href="#">Best Seller</a>
+        <a class="nav-link text-white" href="#">New Arrival</a>
+      </div>
+  
+      <!-- Center -->
+      <a class="navbar-brand mx-auto text-center text-white" href="#">
+      LC WAGIGI
+      </a>
+
+      <!-- Right side -->
+      <div class="navbar-nav ms-auto sign-out">
+        <span class="nav-link text-white">Hello <strong>${emailuser}</strong></span>
+        <a id = "signout" class="nav-link text-white" href="#" title="Sign Out">
+          <i class="bi bi-box-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </nav>
+    
+    
+    
+    `;
+    console.log(emailuser);
+  }
+
+  // handle signout event
+  let signout = this.document.getElementById("signout");
+  signout.addEventListener("click", function () {
+    sessionStorage.removeItem("email");
+    navv.style.display = "none";
+    window.location.reload();
+  }); // end of event
 }); // end of load
+
+// let users = JSON.parse(localStorage.getItem("users"));
+
+// console.log(users);

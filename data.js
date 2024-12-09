@@ -1,4 +1,4 @@
-const database = {
+const database1 = {
   users: [
     {
       id: 1,
@@ -328,11 +328,3 @@ const database = {
   ],
 };
 
-// Save Data To LocalStorage
-function SaveDataToLocalStorage(database) {
-  for (var key in database) {
-    localStorage.setItem(key, JSON.stringify(database[key]));
-  }
-}
-
-SaveDataToLocalStorage(database);
