@@ -140,14 +140,77 @@ window.addEventListener("load", function () {
   let navv = this.document.getElementById("navv");
 
   let emailuser = this.sessionStorage.getItem("email");
-  if (emailuser === null) {
-    console.log("empty");
-  } else {
-    //this.alert("nav will removing ");
+  console.log(emailuser);
+  // if no one login [session == null]
+  if (!emailuser) {
     navv.style.display = "block";
     navv.innerHTML = `
-    
-    <nav class="navbar navbar-expand-lg text-white " >
+            <nav class="navbar navbar-expand-lg  text-white">
+  <div class="container-fluid">
+    <!-- Left side -->
+    <div class="navbar-nav me-auto">
+      <a class="nav-link text-white" href="#">Brands</a>
+      <a class="nav-link text-white" href="#">Contact Us</a>
+    </div>
+
+    <!-- Center -->
+    <a class="navbar-brand mx-auto text-center text-white" href="#">
+      LC WAGIGI
+    </a>
+
+    <!-- Right side -->
+    <div class="navbar-nav ms-auto">
+     
+      <a class="nav-link text-white" href="#">Best Seller</a>
+      <a class="nav-link text-white" href="#">New Arrival</a>
+       <a class="nav-link text-white" href="/E-commerce/authentication/login/login.html" title="Sign In">
+        <i class="bi bi-person"></i>
+      </a>
+    </div>
+  </div>
+</nav>
+
+  `;
+  return;
+  }
+
+  // if user login already in session email
+  // get type from this mail to know this mail admin or not
+  let accounttype = getaccounttype(emailuser);
+  if (accounttype === "Admin") {
+    navv.style.display = "block";
+    navv.innerHTML = `
+  
+   <nav class="navbar navbar-expand-lg text-white " >
+    <div class="container-fluid">
+      <!-- Left side -->
+      <div class="navbar-nav me-auto">
+        <a class="nav-link text-white" href="#">Best Seller</a>
+        <a class="nav-link text-white" href="/E-commerce/Admin panel/home.html">Admin panel</a>
+      </div>
+  
+      <!-- Center -->
+      <a class="navbar-brand mx-auto text-center text-white" href="#">
+      LC WAGIGI
+      </a>
+
+      <!-- Right side -->
+      <div class="navbar-nav ms-auto sign-out">
+        <span class="nav-link text-white">Hello <strong>${emailuser}</strong></span>
+        <a id = "signout" class="nav-link text-white" href="#" title="Sign Out">
+          <i class="bi bi-box-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </nav>
+  
+  
+  `;
+  } else {
+    navv.style.display = "block";
+    navv.innerHTML = `
+  
+   <nav class="navbar navbar-expand-lg text-white " >
     <div class="container-fluid">
       <!-- Left side -->
       <div class="navbar-nav me-auto">
@@ -169,11 +232,8 @@ window.addEventListener("load", function () {
       </div>
     </div>
   </nav>
-    
-    
-    
-    `;
-    console.log(emailuser);
+  
+  `;
   }
 
   // handle signout event
@@ -188,3 +248,35 @@ window.addEventListener("load", function () {
 // let users = JSON.parse(localStorage.getItem("users"));
 
 // console.log(users);
+
+/*
+CRUD for accounts in db 
+- graph for information about e commerce system 
+- 
+
+
+*/
+
+// get account type using email
+let userss = JSON.parse(localStorage.getItem("users"));
+//console.log(userss);
+function getaccounttype(email) {
+  let type = null;
+  userss.forEach((element) => {
+    if (element.email == email) {
+      type = element.accountType;
+    }
+  });
+  return type;
+}
+
+// let t = getaccounttype("janesmith@example.com");
+// console.log(t);
+
+//console.log(JSON.parse(localStorage.getItem("users")));
+// alicejohnson@example.com   // yetanothersecurepassword789
+
+
+
+
+console.log(JSON.parse(localStorage.getItem("brands")));

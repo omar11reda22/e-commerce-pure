@@ -100,7 +100,7 @@ formaction.addEventListener("submit", function (e) {
     sessionStorage.setItem('firstname',firstName.value);
     sessionStorage.setItem('lastname',lastName.value);
     sessionStorage.setItem('email',email.value);
-    alert("saving in session id done");
+   // alert("saving in session id done");
     // saving in locastorage [users]
     let users = JSON.parse(localStorage.getItem("users"));
     console.log(users);
@@ -112,7 +112,7 @@ formaction.addEventListener("submit", function (e) {
     }
     users.push(newuser); 
     localStorage.setItem('users',JSON.stringify(users));
-    alert("saving in localstorage is done ");
+//    alert("saving in localstorage is done ");
 
 
 
