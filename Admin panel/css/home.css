@@ -1,0 +1,54 @@
+.change{
+    padding: 12px;
+    width: 75px;
+    border-radius: 15px;
+    font-size: 10px;
+    text-align: center;
+
+}
+.cancel{
+    padding: 12px;
+    width: 75px;
+    border-radius: 15px;
+    font-size: 10px;
+    text-align: center;
+
+}
+.process-status {
+  color: black;
+  background-color: gold;
+  width: 65px;
+  padding: 4px;
+  border-radius: 15px;
+  font-weight: bold;
+}
+
+.shipped-status {
+  color: black;
+  background-color: skyblue;
+  width: 65px;
+  padding: 4px;
+  border-radius: 15px;
+  font-weight: bold;
+}
+
+.delivered-status {
+  color: black;
+  background-color: lightgreen;
+  padding: 4px;
+  width: 65px;
+  border-radius: 15px;
+  height: 50px;
+  font-weight: bold;
+}
+
+.default-status {
+  background-color: black;
+  width: 65px;
+  color: white;
+  padding: 4px;
+  height: 50px;
+  border-radius: 15px;
+  font-weight: bold;
+
+}

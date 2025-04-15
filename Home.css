@@ -1,0 +1,290 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body,
+html {
+  margin: 0;
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+.Parent-hello {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  color: white;
+}
+
+.Parent-hello video {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  object-fit: cover;
+  filter: brightness(0.7);
+}
+
+.nav {
+  position: fixed;
+  top: -2%;
+  left: 1%;
+  width: 100%;
+
+  padding: 20px 40px;
+  z-index: 10;
+}
+
+/* .nav:hover {
+  background-color: white;
+  color: black;
+  transition: .4s ease-in-out;
+} */
+.nav:hover .logo a{
+    color: black !important;
+    font-weight: normal;    
+}
+
+.nav ul {
+  list-style-type: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav ul li {
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.nav ul li:hover {
+  color: rgba(96, 45, 45, 0.991);
+}
+
+.logo a {
+  text-decoration: none;
+  font-family: "Cambria", serif;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
+.infoo {
+  position: relative;
+  z-index: 2;
+}
+
+.text {
+  position: absolute;
+  top: 280px;
+  left: 10%;
+}
+
+.gift ul {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 35px;
+}
+
+.gift ul li a {
+  text-decoration: none;
+  color: black;
+}
+
+.gift ul li {
+  background-color: white;
+  border-radius: 30px;
+  text-align: center;
+  padding: 10px;
+  width: 150px;
+  transition: all 0.3s ease;
+}
+
+.gift ul li:hover {
+  background-color: rgba(96, 45, 45, 0.991);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.festive {
+  text-align: center;
+}
+
+.festive h1 {
+  font-size: 35px;
+  font-family: Georgia, serif;
+  margin-bottom: 30px;
+}
+
+.showing-watches {
+  margin-top: 100px;
+  width: 100%;
+}
+
+.idea ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.watches ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  gap: 17px;
+}
+.watches ul li {
+  text-align: center;
+}
+.watches ul li:hover a {
+  opacity: 1;
+  transition: 1s;
+}
+
+.watches {
+  text-align: center;
+}
+
+.info button {
+  text-decoration: none;
+  color: black;
+  border: 1px solid black;
+  border-radius: 30px;
+  padding: 10px;
+  text-align: center;
+  display: inline-block;
+  width: 150px;
+  opacity: 0;
+}
+
+.info:hover button {
+  opacity: 1;
+  transition: 1s;
+}
+.info:hover img {
+  transform: scale(1.1);
+  transition: 1s;
+}
+.info img {
+  width: 200px;
+}
+
+.choise {
+  text-align: center;
+  margin-top: 150px;
+}
+.choise img {
+  width: 100%;
+}
+.choise img:hover {
+  transform: scaleZ(6);
+  transition: transform 0.4s ease-in-out;
+}
+
+.watches-name {
+  font-size: 12px;
+}
+
+.arrival img:hover {
+  opacity: 0.5;
+  transition: 0.5s;
+}
+
+.li img {
+  position: relative;
+  overflow: hidden;
+}
+
+.quick-view-btn {
+  position: absolute;
+  bottom: 220px;
+  background-color: white;
+  color: black;
+  padding: 10px 20px;
+  border: 2px solid black;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.li-img:hover .quick-view-btn {
+  opacity: 1;
+  background-color: black;
+  color: white;
+  border: 1px solid black;
+  border-radius: 20px;
+  transform: translateY(-10px);
+  transition: 0.5s;
+}
+.quick-view-btn:hover .arrival img {
+  opacity: 0.5;
+}
+.new-arrival {
+  margin-top: 120px;
+}
+
+.about {
+  margin-top: 80px;
+}
+
+.img-fluid {
+  width: 500px;
+  border-radius: 20px;
+}
+
+
+.navbar-brand {
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+    .navbar-nav .nav-link {
+      font-size: 1rem;
+    }
+    .sign-out {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+
+
+
+
+
+@media (max-width: 576px) {
+  .nav-left,
+  .nav-right {
+    display: none; /* Hide left and right nav sections */
+  }
+
+  .logo {
+    margin: 0 auto; /* Center logo */
+    text-align: center;
+  }
+
+  .dropdown-small {
+    display: block; /* Show dropdown on small screens */
+    margin: 0 auto;
+    text-align: center;
+  }
+}
+
+/* Default dropdown hidden for larger screens */
+.dropdown-small {
+  display: none;
+}
+
+
+.cls{
+    width: 100%;
+   
+}
+.cls2{
+    width: 100%;
+}

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #about-us {
+  display: flex;
+  align-items: center;
+  padding: 50px;
+  background-color: #f5f5f5;
+}
+
+#about-us img {
+  max-width: 90%;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#about-us h2 {
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+#about-us p {
+  font-size: 18px;
+  color: #555;
+  line-height: 1.6;
+}
+
+
+
+
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body,
+html {
+  margin: 0;
+}
+
+.Parent-hello {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  color: white;
+}
+
+.Parent-hello video {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  object-fit: cover;
+  filter: brightness(0.7);
+}
+.nav {
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 14px;
+  padding-top: 20px;
+}
+
+.nav:hover{
+    background-color: white;
+    height: 180px;
+    color: black;
+    width: 100%;
+    transition: .5s;
+}
+.nav:hover .logo a{
+    color: black !important;
+}
+
+.infoo {
+  position: relative;
+  z-index: 2;
+}
+.logo {
+  text-align: center;
+}
+.logo a {
+  text-decoration: none;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+.nav-left {
+  float: left;
+  cursor: pointer;
+}
+.nav-left ul {
+  list-style-type: none;
+  display: flex;
+  gap: 40px;
+}
+.nav-right {
+  float: right;
+  cursor: pointer;
+  margin-left: 20px;
+}
+.nav-right ul {
+  list-style-type: none;
+  display: flex;
+  gap: 20px;
+}
+.nav-right ul li {
+  margin-left: 50px;
+}
+.nav-left ul li {
+  margin-right: 100px;
+}
+
+
+.text {
+  position: absolute;
+  top: 280px;
+  left: 140px;
+}
+
+.gift ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin-top: 35px;
+}
+
+.gift ul li a {
+  text-decoration: none;
+  color: black;
+}
+.gift ul li {
+  background-color: white;
+  border-radius: 30px;
+  text-align: center;
+  padding: 10px;
+  width: 150px;
+}
+.gift ul li:hover {
+  background-color: rgba(96, 45, 45, 0.991);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2);
+}
+.festive {
+  text-align: center;
+}
+
+.festive h1 {
+  font-size: 35px;
+  font-family: Georgia, serif;
+  margin-bottom: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+</style>
+<body>
+  <section class="Parent-hello">
+     
+      <video
+        src="/E-commerce/imgs/17213788-uhd_3840_2160_60fps.mp4"
+        autoplay
+        loop
+        muted
+      ></video>
+      <div class="container infoo">
+       
+        <section class="nav">
+          <div class="nav-left">
+            <ul>
+              <li>Choise</li>
+              <li>Contact US</li>
+            </ul>
+          </div>
+          <div class="logo">
+            <a href="#" style="color: white">LC Wagigi</a>
+          </div>
+          <div class="nav-right">
+            <ul>
+              <li>New arrival</li>
+              <li>Best sallers</li>
+              <li><i class="fa-solid fa-location-dot"></i></li>
+              <li><i class="fa-solid fa-user"></i></li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="text">
+          <div class="festive">
+            <h1>
+              The Festive Season is <br />
+              Just around the corner
+            </h1>
+            <p>
+              Wagigi is here to duide you a selection <br />
+              of elegant gift ideas
+            </p>
+          </div>
+          <div class="gift">
+            <ul>
+              <li><a href="#">Gifts for Him</a></li>
+              <li><a href="#">Gifts For Her</a></li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </section>
+
+
+    <section id="about-us" style="display: flex; align-items: center; padding: 50px; background-color: #f5f5f5;">
+  <!-- Image Section -->
+  <div style="flex: 1; text-align: center;">
+    <img src="/E-commerce/imgs/watch-collection-conquest-l3-720-4-02-6-1726058194-thumbnail.webp" alt="Luxury Watches" style="max-width: 90%; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+  </div>
+
+  <!-- Text Section -->
+  <div style="flex: 1; padding-left: 30px;">
+    <h2 style="font-size: 36px; color: #333; margin-bottom: 20px;">About Us</h2>
+    <p style="font-size: 18px; color: #555; line-height: 1.6;">
+      Welcome to <strong>Timeless Elegance</strong>, where we celebrate the art of timekeeping. Our mission is to bring you a curated selection of premium watches that combine craftsmanship, innovation, and style.
+    </p>
+    <p style="font-size: 18px; color: #555; line-height: 1.6;">
+      Whether you're seeking a statement piece or a functional companion, we offer a diverse collection from top brands and independent watchmakers. Every watch tells a story—let us help you find yours.
+    </p>
+    <p style="font-size: 18px; color: #555; line-height: 1.6;">
+      Join us on this journey of timeless elegance and discover the perfect watch to elevate your style and celebrate every moment.
+    </p>
+  </div>
+</section>
+
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6-col-md-4">
+
+            </div>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>

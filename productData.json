@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "name": "Classic Leather Watch",
+    "image": "/E-commerce/imgs/watch-collection-conquest-l3-720-4-02-6-1726058194-thumbnail.webp",
+    "price": 149.99,
+    "category": "Men",
+    "description": "A timeless classic with a genuine leather strap and elegant design.",
+    "inStock": true
+  },
+  {
+    "id": 2,
+    "name": "Luxury Gold Watch",
+    "image": "/E-commerce/imgs/watch-collection-conquest-l3-720-4-02-6-1726058194-thumbnail.webp",
+    "price": 499.99,
+    "category": "Women",
+    "description": "Exquisite gold watch with a sleek finish and sparkling accents.",
+    "inStock": true
+  },
+  {
+    "id": 3,
+    "name": "Digital Sports Watch",
+    "image": "/E-commerce/imgs/watch-collection-conquest-l3-720-4-02-6-1726058194-thumbnail.webp",
+    "price": 89.99,
+    "category": "Unisex",
+    "description": "Durable digital watch perfect for outdoor and fitness enthusiasts.",
+    "inStock": false
+  },
+  {
+    "id": 4,
+    "name": "Smart Fitness Watch",
+    "image": "/E-commerce/imgs/watch-collection-conquest-l3-720-4-02-6-1726058194-thumbnail.webp",
+    "price": 199.99,
+    "category": "Unisex",
+    "description": "Smartwatch with health tracking and customizable watch faces.",
+    "inStock": true
+  },
+  {
+    "id": 5,
+    "name": "Elegant Silver Watch",
+    "image": "/E-commerce/imgs/watch-collection-conquest-l3-720-4-02-6-1726058194-thumbnail.webp",
+    "price": 299.99,
+    "category": "Women",
+    "description": "Sophisticated silver watch with a minimalist yet stunning design.",
+    "inStock": true
+  },
+  {
+    "id": 6,
+    "name": "Chronograph Steel Watch",
+    "image": "/E-commerce/imgs/watch-collection-conquest-l3-720-4-02-6-1726058194-thumbnail.webp",
+    "price": 349.99,
+    "category": "Men",
+    "description": "Premium chronograph watch with a stainless steel band.",
+    "inStock": true
+  },
+  {
+    "id": 7,
+    "name": "Vintage Pocket Watch",
+    "image": "/E-commerce/imgs/watch-collection-conquest-l3-720-4-02-6-1726058194-thumbnail.webp",
+    "price": 179.99,
+    "category": "Unisex",
+    "description": "Classic pocket watch with intricate details for a retro look.",
+    "inStock": true
+  },
+  {
+    "id": 8,
+    "name": "Luxury Diamond Watch",
+    "image": "/E-commerce/imgs/watch-collection-conquest-l3-720-4-02-6-1726058194-thumbnail.webp",
+    "price": 999.99,
+    "category": "Women",
+    "description": "Opulent diamond-encrusted watch, a true statement of elegance.",
+    "inStock": false
+  }
+]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,21 @@
+#paymentMessage {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #f8d7da; /* Light pink background */
+    color: #721c24; /* Dark red text */
+    padding: 10px 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    text-align: center;
+    z-index: 9999;
+    display: none; /* Initially hidden */
+}
+
+#paymentMessage p {
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+}

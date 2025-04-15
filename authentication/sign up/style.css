@@ -1,0 +1,53 @@
+.form-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-label {
+    font-weight: bold;
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border-color: #001E3C;
+}
+
+.icon-eye {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.create-account-btn {
+    background-color: #001E3C;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+}
+
+.create-account-btn:hover {
+    background-color: #004080;
+}
+
+.form-check-input:checked {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.error {
+    color: red;
+    font-size: 0.9rem;
+}
+
+.already-account-link {
+    color: #001E3C;
+    text-decoration: underline;
+}
+
