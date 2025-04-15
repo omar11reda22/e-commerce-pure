@@ -1,11 +1,4 @@
 // current user 
-
-
-
-
-
-
-
 const database = {
     currentUser: [],
     GuestCart: [],
@@ -22,22 +15,22 @@ const database = {
         { id: 10, firstName: "John", lastName: "Doe", email: "williamtaylor@example.com", password: "williamsecurepassword123", cart: [], accountType: "Customer", products: [], orderIds: [118, 119], address: { street: "202 Palm St", city: "Sharm El Sheikh", governorate: "South Sinai" }, mobileNumber: "01234567893", image: "user10.jpg" }
     ],
     orders: [
-        { orderId: 101, items: [{ id: 1, price: 199.99, quantity: 2 }, { id: 2, price: 149.99, quantity: 1 }], customerId: 1, totalPrice: 549.97, date: "2023-12-03", status: "Shipped", customerDetails: { firstName: "John", lastName: "Doe", address: { street: "123 Main St", city: "Mansoura", zipCode: "12345" }, email: "johndoe@example.com", phone: "123-456-7890" } },
-        { orderId: 102, items: [{ id: 3, price: 599.99, quantity: 1 }, { id: 1, price: 199.99, quantity: 3 }], customerId: 1, totalPrice: 1199.95, date: "2023-12-04", status: "Processing", customerDetails: { firstName: "John", lastName: "Doe", address: { street: "123 Main St", city: "Mansoura", zipCode: "12345" }, email: "johndoe@example.com", phone: "123-456-7890" } },
-        { orderId: 103, items: [{ id: 2, price: 149.99, quantity: 2 }, { id: 4, price: 299.99, quantity: 1 }], customerId: 1, totalPrice: 599.97, date: "2023-12-05", status: "Shipped", customerDetails: { firstName: "John", lastName: "Doe", address: { street: "123 Main St", city: "Mansoura", zipCode: "12345" }, email: "johndoe@example.com", phone: "123-456-7890" } },
-        { orderId: 104, items: [{ id: 5, price: 119.99, quantity: 1 }], customerId: 2, totalPrice: 119.99, date: "2023-12-06", status: "Delivered", customerDetails: { firstName: "Jane", lastName: "Smith", address: { street: "456 Oak St", city: "Cairo", zipCode: "67890" }, email: "janesmith@example.com", phone: "234-567-8901" } },
-        { orderId: 105, items: [{ id: 6, price: 149.99, quantity: 2 }, { id: 7, price: 399.99, quantity: 1 }], customerId: 2, totalPrice: 699.97, date: "2023-12-07", status: "Processing", customerDetails: { firstName: "Jane", lastName: "Smith", address: { street: "456 Oak St", city: "Cairo", zipCode: "67890" }, email: "janesmith@example.com", phone: "234-567-8901" } },
-        { orderId: 106, items: [{ id: 8, price: 229.99, quantity: 2 }, { id: 9, price: 99.99, quantity: 3 }], customerId: 5, totalPrice: 859.95, date: "2023-12-08", status: "Shipped", customerDetails: { firstName: "Robert", lastName: "Brown", address: { street: "789 Pine St", city: "Alexandria", zipCode: "11223" }, email: "robertb@example.com", phone: "345-678-9012" } },
-        { orderId: 107, items: [{ id: 10, price: 129.99, quantity: 1 }, { id: 11, price: 179.99, quantity: 2 }], customerId: 5, totalPrice: 489.97, date: "2023-12-09", status: "Processing", customerDetails: { firstName: "Robert", lastName: "Brown", address: { street: "789 Pine St", city: "Alexandria", zipCode: "11223" }, email: "robertb@example.com", phone: "345-678-9012" } },
-        { orderId: 108, items: [{ id: 12, price: 249.99, quantity: 1 }, { id: 13, price: 199.99, quantity: 1 }], customerId: 4, totalPrice: 449.98, date: "2023-12-10", status: "Delivered", customerDetails: { firstName: "Emma", lastName: "Davis", address: { street: "234 Maple St", city: "Tanta", zipCode: "45678" }, email: "emmad@example.com", phone: "456-789-0123" } },
-        { orderId: 109, items: [{ id: 14, price: 329.99, quantity: 1 }, { id: 15, price: 89.99, quantity: 1 }], customerId: 4, totalPrice: 419.98, date: "2023-12-11", status: "Processing", customerDetails: { firstName: "Emma", lastName: "Davis", address: { street: "234 Maple St", city: "Tanta", zipCode: "45678" }, email: "emmad@example.com", phone: "456-789-0123" } },
-        { orderId: 110, items: [{ id: 16, price: 139.99, quantity: 2 }], customerId: 5, totalPrice: 279.98, date: "2023-12-12", status: "Shipped", customerDetails: { firstName: "Liam", lastName: "Wilson", address: { street: "567 Birch St", city: "Giza", zipCode: "78901" }, email: "liamwilson@example.com", phone: "567-890-1234" } },
-        { orderId: 111, items: [{ id: 17, price: 149.99, quantity: 3 }, { id: 18, price: 299.99, quantity: 1 }], customerId: 8, totalPrice: 749.96, date: "2023-12-13", status: "Processing", customerDetails: { firstName: "Liam", lastName: "Wilson", address: { street: "567 Birch St", city: "Giza", zipCode: "78901" }, email: "liamwilson@example.com", phone: "567-890-1234" } },
-        { orderId: 112, items: [{ id: 19, price: 199.99, quantity: 2 }, { id: 20, price: 159.99, quantity: 1 }], customerId: 8, totalPrice: 559.97, date: "2023-12-14", status: "Shipped", customerDetails: { firstName: "Olivia", lastName: "Taylor", address: { street: "890 Cedar St", city: "Ismailia", zipCode: "23456" }, email: "oliviataylor@example.com", phone: "678-901-2345" } },
-        { orderId: 113, items: [{ id: 21, price: 109.99, quantity: 4 }], customerId: 8, totalPrice: 439.96, date: "2023-12-15", status: "Delivered", customerDetails: { firstName: "Olivia", lastName: "Taylor", address: { street: "890 Cedar St", city: "Ismailia", zipCode: "23456" }, email: "oliviataylor@example.com", phone: "678-901-2345" } },
-        { orderId: 114, items: [{ id: 22, price: 299.99, quantity: 1 }, { id: 23, price: 89.99, quantity: 3 }], customerId: 4, totalPrice: 569.96, date: "2023-12-16", status: "Processing", customerDetails: { firstName: "Mia", lastName: "Martin", address: { street: "101 Poplar St", city: "Hurghada", zipCode: "34567" }, email: "miamartin@example.com", phone: "789-012-3456" } },
-        { orderId: 115, items: [{ id: 10, price: 129.99, quantity: 1 }, { id: 25, price: 179.99, quantity: 2 }], customerId: 4, totalPrice: 489.97, date: "2023-12-17", status: "Shipped", customerDetails: { firstName: "Mia", lastName: "Martin", address: { street: "101 Poplar St", city: "Hurghada", zipCode: "34567" }, email: "miamartin@example.com", phone: "789-012-3456" } },
-        { orderId: 116, items: [{ id: 1, price: 199.99, quantity: 2 }, { id: 2, price: 149.99, quantity: 1 }], customerId: 1, totalPrice: 549.97, date: "2023-12-03", status: "Processing", customerDetails: { firstName: "John", lastName: "Doe", address: { street: "123 Main St", city: "Mansoura", zipCode: "12345" }, email: "johndoe@example.com", phone: "123-456-7890" } },
+        { orderId: 101, items: [{ id: 1, price: 199.99, quantity: 2 }, { id: 2, price: 149.99, quantity: 1 }], customerId: 1, totalPrice: 549.97, date: "2023-12-03", status: "Shipped", cancelMSG: "", customerDetails: { firstName: "John", lastName: "Doe", address: { street: "123 Main St", city: "Mansoura", zipCode: "12345" }, email: "johndoe@example.com", phone: "123-456-7890" } },
+        { orderId: 102, items: [{ id: 3, price: 599.99, quantity: 1 }, { id: 1, price: 199.99, quantity: 3 }], customerId: 1, totalPrice: 1199.95, date: "2023-12-04", status: "Processing", cancelMSG: "", customerDetails: { firstName: "John", lastName: "Doe", address: { street: "123 Main St", city: "Mansoura", zipCode: "12345" }, email: "johndoe@example.com", phone: "123-456-7890" } },
+        { orderId: 103, items: [{ id: 2, price: 149.99, quantity: 2 }, { id: 4, price: 299.99, quantity: 1 }], customerId: 1, totalPrice: 599.97, date: "2023-12-05", status: "Shipped", cancelMSG: "", customerDetails: { firstName: "John", lastName: "Doe", address: { street: "123 Main St", city: "Mansoura", zipCode: "12345" }, email: "johndoe@example.com", phone: "123-456-7890" } },
+        { orderId: 104, items: [{ id: 5, price: 119.99, quantity: 1 }], customerId: 2, totalPrice: 119.99, date: "2023-12-06", status: "canceled", cancelMSG: "", customerDetails: { firstName: "Jane", lastName: "Smith", address: { street: "456 Oak St", city: "Cairo", zipCode: "67890" }, email: "janesmith@example.com", phone: "234-567-8901" } },
+        { orderId: 105, items: [{ id: 6, price: 149.99, quantity: 2 }, { id: 7, price: 399.99, quantity: 1 }], customerId: 2, totalPrice: 699.97, date: "2023-12-07", status: "Processing", cancelMSG: "", customerDetails: { firstName: "Jane", lastName: "Smith", address: { street: "456 Oak St", city: "Cairo", zipCode: "67890" }, email: "janesmith@example.com", phone: "234-567-8901" } },
+        { orderId: 106, items: [{ id: 8, price: 229.99, quantity: 2 }, { id: 9, price: 99.99, quantity: 3 }], customerId: 5, totalPrice: 859.95, date: "2023-12-08", status: "Shipped", cancelMSG: "", customerDetails: { firstName: "Robert", lastName: "Brown", address: { street: "789 Pine St", city: "Alexandria", zipCode: "11223" }, email: "robertb@example.com", phone: "345-678-9012" } },
+        { orderId: 107, items: [{ id: 10, price: 129.99, quantity: 1 }, { id: 11, price: 179.99, quantity: 2 }], customerId: 5, totalPrice: 489.97, date: "2023-12-09", status: "Processing", cancelMSG: "", customerDetails: { firstName: "Robert", lastName: "Brown", address: { street: "789 Pine St", city: "Alexandria", zipCode: "11223" }, email: "robertb@example.com", phone: "345-678-9012" } },
+        { orderId: 108, items: [{ id: 12, price: 249.99, quantity: 1 }, { id: 13, price: 199.99, quantity: 1 }], customerId: 4, totalPrice: 449.98, date: "2023-12-10", status: "canceled", cancelMSG: "", customerDetails: { firstName: "Emma", lastName: "Davis", address: { street: "234 Maple St", city: "Tanta", zipCode: "45678" }, email: "emmad@example.com", phone: "456-789-0123" } },
+        { orderId: 109, items: [{ id: 14, price: 329.99, quantity: 1 }, { id: 15, price: 89.99, quantity: 1 }], customerId: 4, totalPrice: 419.98, date: "2023-12-11", status: "Processing", cancelMSG: "", customerDetails: { firstName: "Emma", lastName: "Davis", address: { street: "234 Maple St", city: "Tanta", zipCode: "45678" }, email: "emmad@example.com", phone: "456-789-0123" } },
+        { orderId: 110, items: [{ id: 16, price: 139.99, quantity: 2 }], customerId: 5, totalPrice: 279.98, date: "2023-12-12", status: "Shipped", cancelMSG: "", customerDetails: { firstName: "Liam", lastName: "Wilson", address: { street: "567 Birch St", city: "Giza", zipCode: "78901" }, email: "liamwilson@example.com", phone: "567-890-1234" } },
+        { orderId: 111, items: [{ id: 17, price: 149.99, quantity: 3 }, { id: 18, price: 299.99, quantity: 1 }], customerId: 8, totalPrice: 749.96, date: "2023-12-13", status: "Processing", cancelMSG: "", customerDetails: { firstName: "Liam", lastName: "Wilson", address: { street: "567 Birch St", city: "Giza", zipCode: "78901" }, email: "liamwilson@example.com", phone: "567-890-1234" } },
+        { orderId: 112, items: [{ id: 19, price: 199.99, quantity: 2 }, { id: 20, price: 159.99, quantity: 1 }], customerId: 8, totalPrice: 559.97, date: "2023-12-14", status: "Shipped", cancelMSG: "", customerDetails: { firstName: "Olivia", lastName: "Taylor", address: { street: "890 Cedar St", city: "Ismailia", zipCode: "23456" }, email: "oliviataylor@example.com", phone: "678-901-2345" } },
+        { orderId: 113, items: [{ id: 21, price: 109.99, quantity: 4 }], customerId: 8, totalPrice: 439.96, date: "2023-12-15", status: "canceled", cancelMSG: "", customerDetails: { firstName: "Olivia", lastName: "Taylor", address: { street: "890 Cedar St", city: "Ismailia", zipCode: "23456" }, email: "oliviataylor@example.com", phone: "678-901-2345" } },
+        { orderId: 114, items: [{ id: 22, price: 299.99, quantity: 1 }, { id: 23, price: 89.99, quantity: 3 }], customerId: 4, totalPrice: 569.96, date: "2023-12-16", status: "Processing", cancelMSG: "", customerDetails: { firstName: "Mia", lastName: "Martin", address: { street: "101 Poplar St", city: "Hurghada", zipCode: "34567" }, email: "miamartin@example.com", phone: "789-012-3456" } },
+        { orderId: 115, items: [{ id: 10, price: 129.99, quantity: 1 }, { id: 25, price: 179.99, quantity: 2 }], customerId: 4, totalPrice: 489.97, date: "2023-12-17", status: "Shipped", cancelMSG: "", customerDetails: { firstName: "Mia", lastName: "Martin", address: { street: "101 Poplar St", city: "Hurghada", zipCode: "34567" }, email: "miamartin@example.com", phone: "789-012-3456" } },
+        { orderId: 116, items: [{ id: 1, price: 199.99, quantity: 2 }, { id: 2, price: 149.99, quantity: 1 }], customerId: 1, totalPrice: 549.97, date: "2023-12-03", status: "Processing", cancelMSG: "", customerDetails: { firstName: "John", lastName: "Doe", address: { street: "123 Main St", city: "Mansoura", zipCode: "12345" }, email: "johndoe@example.com", phone: "123-456-7890" } },
     ],
     products: [
         {
@@ -49,7 +42,8 @@ const database = {
             brandId: 1,
             date: "2023-10-01",
             images: ["classic1.jpg", "classic2.jpg", "classic3.jpg"],
-            gender: "Men"
+            gender: "Men",
+            previousPrice: 219.99 // 10% higher than current price
         },
         {
             id: 2,
@@ -60,7 +54,8 @@ const database = {
             brandId: 2,
             date: "2023-11-15",
             images: ["sport1.jpg", "sport2.jpg"],
-            gender: "Unisex"
+            gender: "Unisex",
+            previousPrice: 164.99 // 10% higher than current price
         },
         {
             id: 3,
@@ -71,7 +66,8 @@ const database = {
             brandId: 1,
             date: "2023-12-05",
             images: ["luxury1.jpg", "luxury2.jpg", "luxury3.jpg", "luxury4.jpg"],
-            gender: "Women"
+            gender: "Women",
+            previousPrice: 659.99 // 10% higher than current price
         },
         {
             id: 4,
@@ -82,7 +78,8 @@ const database = {
             brandId: 2,
             date: "2023-11-18",
             images: ["smart1.jpg"],
-            gender: "Unisex"
+            gender: "Unisex",
+            previousPrice: 329.99 // 10% higher than current price
         },
         {
             id: 5,
@@ -93,7 +90,8 @@ const database = {
             brandId: 3,
             date: "2023-12-06",
             images: ["fashion1.jpg", "fashion2.jpg"],
-            gender: "Women"
+            gender: "Women",
+            previousPrice: 131.99 // 10% higher than current price
         },
         {
             id: 6,
@@ -104,7 +102,8 @@ const database = {
             brandId: 3,
             date: "2023-10-10",
             images: ["sports1.jpg", "sports2.jpg"],
-            gender: "Men"
+            gender: "Men",
+            previousPrice: 164.99 // 10% higher than current price
         },
         {
             id: 7,
@@ -115,7 +114,8 @@ const database = {
             brandId: 4,
             date: "2023-12-08",
             images: ["gold1.jpg", "gold2.jpg"],
-            gender: "Women"
+            gender: "Women",
+            previousPrice: 439.99 // 10% higher than current price
         },
         {
             id: 8,
@@ -126,7 +126,8 @@ const database = {
             brandId: 4,
             date: "2023-10-05",
             images: ["vintage1.jpg", "vintage2.jpg", "vintage3.jpg"],
-            gender: "Unisex"
+            gender: "Unisex",
+            previousPrice: 252.99 // 10% higher than current price
         },
         {
             id: 9,
@@ -137,7 +138,8 @@ const database = {
             brandId: 5,
             date: "2023-11-20",
             images: ["eco1.jpg", "eco2.jpg"],
-            gender: "Unisex"
+            gender: "Unisex",
+            previousPrice: 109.99 // 10% higher than current price
         },
         {
             id: 10,
@@ -148,7 +150,8 @@ const database = {
             brandId: 5,
             date: "2023-12-10",
             images: ["digital1.jpg", "digital2.jpg"],
-            gender: "Men"
+            gender: "Men",
+            previousPrice: 142.99 // 10% higher than current price
         },
         {
             id: 11,
@@ -159,7 +162,8 @@ const database = {
             brandId: 1,
             date: "2023-12-12",
             images: ["minimal1.jpg", "minimal2.jpg", "minimal3.jpg"],
-            gender: "Women"
+            gender: "Women",
+            previousPrice: 197.99 // 10% higher than current price
         },
         {
             id: 12,
@@ -170,7 +174,8 @@ const database = {
             brandId: 2,
             date: "2023-10-15",
             images: ["chrono1.jpg", "chrono2.jpg"],
-            gender: "Men"
+            gender: "Men",
+            previousPrice: 274.99 // 10% higher than current price
         },
         {
             id: 13,
@@ -181,7 +186,8 @@ const database = {
             brandId: 3,
             date: "2023-11-25",
             images: ["elegant1.jpg", "elegant2.jpg", "elegant3.jpg"],
-            gender: "Women"
+            gender: "Women",
+            previousPrice: 362.99 // 10% higher than current price
         },
         {
             id: 14,
@@ -192,7 +198,8 @@ const database = {
             brandId: 4,
             date: "2023-11-28",
             images: ["outdoor1.jpg"],
-            gender: "Unisex"
+            gender: "Unisex",
+            previousPrice: 98.99 // 10% higher than current price
         },
         {
             id: 15,
@@ -203,7 +210,8 @@ const database = {
             brandId: 5,
             date: "2023-12-15",
             images: ["retro1.jpg", "retro2.jpg"],
-            gender: "Men"
+            gender: "Men",
+            previousPrice: 153.99 // 10% higher than current price
         },
         {
             id: 16,
@@ -214,7 +222,8 @@ const database = {
             brandId: 2,
             date: "2023-11-30",
             images: ["smartpro1.jpg", "smartpro2.jpg"],
-            gender: "Unisex"
+            gender: "Unisex",
+            previousPrice: 395.99 // 10% higher than current price
         },
         {
             id: 17,
@@ -225,7 +234,8 @@ const database = {
             brandId: 1,
             date: "2023-12-01",
             images: ["diamond1.jpg", "diamond2.jpg", "diamond3.jpg"],
-            gender: "Women"
+            gender: "Women",
+            previousPrice: 1099.99 // 10% higher than current price
         },
         {
             id: 18,
@@ -236,7 +246,8 @@ const database = {
             brandId: 3,
             date: "2023-10-25",
             images: ["explorer1.jpg"],
-            gender: "Men"
+            gender: "Men",
+            previousPrice: 197.99 // 10% higher than current price
         },
         {
             id: 19,
@@ -247,7 +258,8 @@ const database = {
             brandId: 4,
             date: "2023-11-12",
             images: ["casual1.jpg", "casual2.jpg"],
-            gender: "Unisex"
+            gender: "Unisex",
+            previousPrice: 120.99 // 10% higher than current price
         },
         {
             id: 20,
@@ -258,7 +270,8 @@ const database = {
             brandId: 2,
             date: "2023-12-08",
             images: ["hightech1.jpg", "hightech2.jpg", "hightech3.jpg"],
-            gender: "Unisex"
+            gender: "Unisex",
+            previousPrice: 494.99 // 10% higher than current price
         },
         {
             id: 21,
@@ -269,64 +282,9 @@ const database = {
             brandId: 5,
             date: "2023-12-09",
             images: ["traveler1.jpg"],
-            gender: "Unisex"
-        },
-        {
-            id: 22,
-            name: "Executive Watch",
-            price: 529.99,
-            sales: 15,
-            stock: 25,
-            brandId: 1,
-            date: "2023-10-20",
-            images: ["executive1.jpg", "executive2.jpg"],
-            gender: "Men"
-        },
-        {
-            id: 23,
-            name: "Mountain Watch",
-            price: 189.99,
-            sales: 50,
-            stock: 45,
-            brandId: 4,
-            date: "2023-11-01",
-            images: ["mountain1.jpg", "mountain2.jpg"],
-            gender: "Unisex"
-        },
-        {
-            id: 24,
-            name: "Urban Watch",
-            price: 199.99,
-            sales: 35,
-            stock: 40,
-            brandId: 3,
-            date: "2023-12-03",
-            images: ["urban1.jpg"],
-            gender: "Women"
-        },
-        {
-            id: 25,
-            name: "Marine Watch",
-            price: 299.99,
-            sales: 20,
-            stock: 30,
-            brandId: 5,
-            date: "2023-12-04",
-            images: ["marine1.jpg", "marine2.jpg"],
-            gender: "Men"
-        },
-        {
-            id: 1000,
-            name: "Zara Watch",
-            price: 299.99,
-            sales: 75,
-            stock: 15,
-            brandId: 5,
-            date: "2023-12-04",
-            images: ["zara1.jpg", "zara2.jpg"],
-            gender: "Men"
+            gender: "Unisex",
+            previousPrice: 241.99 // 10% higher than current price
         }
-
 
 
 
@@ -348,7 +306,7 @@ function SaveDataToLocalStorage(database) {
     }
 }
 
-
+//SaveDataToLocalStorage(database)
 // load data from local storage
 export function GetDataFromLocalStorage(database) {
     for (var key in database) {
@@ -530,5 +488,3 @@ export function GetBrandIdBasedOnName(_name) {
     })
     return id;
 }
-
-

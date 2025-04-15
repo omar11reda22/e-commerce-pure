@@ -11,6 +11,8 @@
   <link rel="stylesheet" href="../../assets/vendors/ti-icons/css/themify-icons.css">
   <link rel="stylesheet" href="../../assets/vendors/css/vendor.bundle.base.css">
   <link rel="stylesheet" href="../../assets/vendors/font-awesome/css/font-awesome.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
   <!-- endinject -->
   <!-- Plugin css for this page -->
   <!-- End Plugin css for this page -->
@@ -35,42 +37,40 @@
       border-color: #dc3545;
       background-color: #f8d7da;
     }
+
+
+
     #sidebar {
-      background-color: #4A4947;
+      background-color: #004985;
     }
+
     #mainCotent {
-      background-color: #D8D2C2 !important;
+      background-color: #e4eff7 !important;
 
     }
+
     #icon {
       box-shadow: 1px 1px 15px #4A4947;
       /* box-shadow: -5px -5px 5px #4A4947; */
     }
 
-
-    #btnSubmit 
-    {
-      background-color: #4A4947;
+    #btnSubmit {
+      background-color: #004985;
       border: 0;
-      
-    }
-    #BackToList
-    {
-      color: #4A4947 !important;
+
     }
 
+    #BackToList {
+      color: #004985 !important;
+    }
 
+    .sidebarr a {
+      color: rgba(255, 255, 255, 0.881) !important;
+    }
 
-
-
-
-
-
-
-
-
-
-
+    .sidebarr li:hover {
+      background-color: #e4eff7 !important;
+    }
   </style>
 
 
@@ -79,8 +79,21 @@
 </head>
 
 <body>
+  <section class="navv" id="navv">
+
+  </section>
   <div class="container-scroller">
-    <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+
+
+
+
+    <!-- <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row" id="sidebar">
+
+
+      
+
+    </nav> -->
+    <!-- <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
 
 
       <ul class="nav justify-content-center">
@@ -99,15 +112,54 @@
       </ul>
 
 
-    </nav>
+    </nav> -->
 
 
     <div class="container-fluid page-body-wrapper">
-
-
-
-
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
+
+        <ul class="nav sidebarr">
+          <li class="nav-item">
+            <a class="nav-link" href="./../../index.html">
+              <span class="menu-title">Dashboard</span>
+              <i class="mdi mdi-home menu-icon"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./../ui-features/buttons.html">Create Product
+              <i class="mdi mdi-plus-circle menu-icon"></i>
+            </a>
+          </li>
+
+
+          <li class="nav-item">
+            <a class="nav-link" href="./../ui-features/SalesManagement.html">Sales Management
+              <i class="mdi mdi-chart-line menu-icon"></i>
+
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="./../ui-features/BrandAnalytics.html">Brand Analytics
+              <i class="mdi mdi-graph menu-icon"></i>
+
+
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="./../ui-features/Geographic.html">Location Insights
+
+              <i class="mdi mdi-map menu-icon"></i>
+            </a>
+          </li>
+
+        </ul>
+      </nav>
+
+
+
+      <!-- <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
           <li class="nav-item">
             <a class="nav-link" href="../../index.html">
@@ -119,7 +171,62 @@
             <a class="nav-link" href="./buttons.html">Create Product </a>
           </li>
         </ul>
+      </nav> -->
+
+
+
+
+      <!-- <button class="btn btn-primary toggle-button" id="toggleButton">Toggle Sidebar</button>
+  
+      <nav class="sidebar sidebar-offcanvas" id="sidebar">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link" href="../../index.html">
+              <span class="menu-title">Dashboard</span>
+              <i class="mdi mdi-home menu-icon"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./buttons.html">Create Product</a>
+          </li>
+        </ul>
       </nav>
+      
+      <script>
+        document.getElementById('toggleButton').addEventListener('click', function() {
+          document.getElementById('sidebar').classList.toggle('show');
+        });
+      </script>  -->
+
+
+
+      <!-- <nav class="sidebar sidebar-offcanvas" id="sidebar">
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">
+              <span class="menu-title">Dashboard</span>
+              <i class="mdi mdi-home menu-icon"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="pages/ui-features/buttons.html">Create Product </a>
+          </li>
+
+
+          <li class="nav-item">
+            <a class="nav-link" href="pages/ui-features/brands.html">Brands </a>
+          </li>
+
+        </ul>
+      </nav> -->
+
+
+
+
+
+
+
+
 
       <!-- <div class="d-flex">
         <nav id="sidebar" class="custom-sidebar navbar navbar-dark bg-dark flex-column">
@@ -166,7 +273,7 @@
         </div>
     </div>
      -->
-  
+
 
 
 
@@ -203,7 +310,7 @@
                 <div class="col-md-6 mb-3 position-relative">
                   <label for="productStock" class="form-label">Stock</label>
                   <input type="text" id="productStock" class="form-control" placeholder="">
-                  <i class="icon-eye bi bi-eye-slash"></i>
+                  <!-- <i class="icon-eye bi bi-eye-slash"></i> -->
                   <div class="error" id="prodStock"></div>
                 </div>
 
@@ -224,7 +331,7 @@
                 <div class="col-md-12 mb-3 position-relative">
                   <label for="photoOne" class="form-label">Main Photo</label>
                   <input type="file" id="productImgOne" class="form-control" placeholder="">
-                  <i class="icon-eye bi bi-eye-slash"></i>
+                  <!-- <i class="icon-eye bi bi-eye-slash"></i> -->
                   <div class="error" id="prodImgOne"></div>
                 </div>
 
@@ -232,14 +339,14 @@
                 <div class="col-md-6 mb-3 position-relative">
                   <label for="photoTwo" class="form-label">Photo Two</label>
                   <input type="file" id="productImgTwo" class="form-control" placeholder="">
-                  <i class="icon-eye bi bi-eye-slash"></i>
+                  <!-- <i class="icon-eye bi bi-eye-slash"></i> -->
                   <div class="error" id="prodImgTwo"></div>
                 </div>
 
                 <div class="col-md-6 mb-3 position-relative">
                   <label for="photoThee" class="form-label">Photo Three</label>
                   <input type="file" id="productImgThree" class="form-control" placeholder="">
-                  <i class="icon-eye bi bi-eye-slash"></i>
+                  <!-- <i class="icon-eye bi bi-eye-slash"></i> -->
                   <div class="error" id="prodImgThree"></div>
                 </div>
 
@@ -281,7 +388,7 @@
       </div>
 
 
-      
+
       <!-- page-body-wrapper ends -->
     </div>
     <!-- container-scroller -->
@@ -296,6 +403,7 @@
     <script src="../../assets/js/settings.js"></script>
     <script src="../../assets/js/todolist.js"></script>
     <script src="../../assets/js/jquery.cookie.js"></script>
+    <script type="module" src="/E-commerce/navbar.js"></script>
     <!-- endinject -->
 </body>
 

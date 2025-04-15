@@ -4,9 +4,11 @@ import { GetAllBrands,
         product,
         GetBrandsName,
         GetBrandIdBasedOnName 
-    } from "./../../../script.js"
+    } from "./../../../../finalscript.js"
 
-
+import { loadnavbar } from "../../../../navbar.js";
+let color = "#004985";
+loadnavbar(color);
 function GetAllUsers() {
     return JSON.parse(localStorage.getItem("users"))
 }
@@ -226,7 +228,19 @@ document.getElementById("CreateProd").addEventListener("submit", function (e) {
         let NewId = Number.parseInt(GetAppropriateId());
         let brandid = GetBrandIdBasedOnName(prodBrand.value);
         let date = `${currentdate.getFullYear()}-${currentdate.getMonth()}-${currentdate.getDate()}`;
-        let images = [productPhotoOne.value.split("\\").pop(), productPhotoTwo.value.split("\\").pop(), productPhotoThree.value.split("\\").pop()];
+
+        let images =[
+          `/E-commerce/Brands/${prodBrand.value}/${productPhotoOne.value
+            .split("\\")
+            .pop()}`,
+            `/E-commerce/Brands/${prodBrand.value}/${productPhotoTwo.value
+            .split("\\")
+            .pop()}`,
+
+            `/E-commerce/Brands/${prodBrand.value}/${productPhotoThree.value
+            .split("\\")
+            .pop()}`
+        ];
         // console.log(NewId);
         // console.log(prodName.value);
         // console.log(prodPrice.value);
@@ -241,6 +255,6 @@ document.getElementById("CreateProd").addEventListener("submit", function (e) {
         products.push(CreatedProduct);
         localStorage.setItem("products", JSON.stringify(products));
         UpdateUserData(NewId);
-        window.location.href = "./../../../index.html";
+        window.location.href = "/E-commerce/Seller/index.html";
     }
 });
