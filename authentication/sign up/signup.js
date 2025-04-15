@@ -1,3 +1,7 @@
+//import { database1 } from "../../finalscript";
+
+import { database , GetUserById } from "../../finalscript.js";
+
 const firstName = document.getElementById("firstName");
 const lastName = document.getElementById("lastName");
 const email = document.getElementById("email");
@@ -8,6 +12,12 @@ const firstNameError = document.getElementById("firstNameError");
 const lastnameerror = document.getElementById("lastNameError");
 const emailerror = document.getElementById("emailError");
 const passwordError = document.getElementById("passwordError");
+const city = document.getElementById("City");
+const mobile = document.getElementById("Mobile");
+const mobileNumberError = document.getElementById("mobileError");
+const cityError = document.getElementById("City");
+const governorate = document.getElementById("Governorate");
+const governorateError = document.getElementById("governorate");
 // get all inputs
 const inputs = document.getElementsByClassName("form-control");
 //firstname validation
@@ -15,6 +25,18 @@ function isValidFirstName(firstName) {
   const firstNameRegex = /^[A-Za-z]+$/;
   return firstNameRegex.test(firstName);
 }
+// validation address 
+// function isvalidaddress(city){
+//   const egyptAddressRegex =
+//     /^(Cairo|Helwan|6th of October|Giza|Alexandria|Mansoura|Zagazig|Port Said|Suez|Qena|Aswan|Ismailia|Luxor|Assiut|Damanhour|Damietta|Kafr El Sheikh|Minya|Shebin El-Kom|Tanta|Beni Suef|Fayoum|Banha|Sohag|Hurghada|Sharm El Sheikh|Marsa Matruh|Kharga|Arish|Rafah|Nuweiba|Shalateen|Asyut|Quseir)$/i;
+//   return firstNameRegex.test(address);
+// }
+// validation mobile 
+function isvalidmobile(mobile){
+  const mobileRegex = /^(?:\+20|01)[0-9]{9}$/;
+  return mobileRegex.test(mobile);
+}
+
 
 //lastname validation
 function isValidLastName(lastName) {
@@ -31,8 +53,7 @@ function isValidEmail(email) {
 //password validation
 function isValidPassword(password) {
   const passwprdRegex =
-    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-  return passwprdRegex.test(password);
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z\d])[A-Za-z\d\S]{8,}$/;  return passwprdRegex.test(password);
 }
 
 //confirm password
@@ -46,6 +67,7 @@ function authenticateUser() {
     isValidLastName &&
     isValidEmail &&
     isValidPassword &&
+    isvalidmobile&&
     isConfirmedPassword
   ) {
     return true;
@@ -70,6 +92,25 @@ formaction.addEventListener("submit", function (e) {
     lastName.style.border = "2px solid red";
     isValid = false;
   }
+  if(governorate.value === ''){
+    e.preventDefault();
+    governorateError.innerHTML = "please select governorate"; 
+      governorate.style.border = "2px solid red";
+      isValid = false;
+  }
+  if(city.value === ''){
+    e.preventDefault();
+    cityError.innerHTML = "please select city";
+    city.style.border = "2px solid red";
+    isValid = false;
+  }
+  if(!isvalidmobile(mobile.value)){
+    e.preventDefault();
+    mobileNumberError.innerHTML =
+      "Invalid mobile number format. Please enter a valid Egyptian mobile number starting with '+20' or '01', followed by 9 digits. Example: +201234567890 or 01234567890.";
+      mobile.style.border = "2px solid red";
+      isValid = false;
+  }
   if (!isValidEmail(email.value)) {
     e.preventDefault();
     emailerror.innerHTML = "Please enter a valid email address";
@@ -88,37 +129,95 @@ formaction.addEventListener("submit", function (e) {
     password.style.border = "2px solid red";
     isValid = false;
   }
+  let accountTypeError = document.getElementById("accountTypeError");
+let radios = document.getElementsByName('accountType');
+let isradiochecked = false;
+let accountType = '';
+for(let i = 0; i<radios.length; i++){
+  if(radios[i].checked){
+    isradiochecked = true;
+    accountType = radios[i].value
+    break;
+  }
+}
+// if(!isradiochecked){
+//   e.preventDefault();
+//   accountTypeError.innerHTML = "please choose";
+//   isValid = false;
+// }
+
+
 
   if (isValid) {
     // will sending name in url
     // need saving in database [localstorage]
-    // need asend a name in url to show it in home page 
-    
+    // need asend a name in url to show it in home page
+
     // save in currentuser + session + users
 
-    // session 
-    sessionStorage.setItem('firstname',firstName.value);
-    sessionStorage.setItem('lastname',lastName.value);
-    sessionStorage.setItem('email',email.value);
-   // alert("saving in session id done");
+    // session
+    sessionStorage.setItem("firstname", firstName.value);
+    sessionStorage.setItem("lastname", lastName.value);
+    sessionStorage.setItem("email", email.value);
+    // alert("saving in session id done");
     // saving in locastorage [users]
     let users = JSON.parse(localStorage.getItem("users"));
+    // let currentuser = JSON.parse(localStorage.getItem("currentUser")); // to set id in current user
+    let newId =
+      users.length > 0 ? Math.max(...users.map((user) => user.id || 0)) + 1 : 1;
+
     console.log(users);
     const newuser = {
-      firstName:firstName.value,
+      id: newId,
+      firstName: firstName.value,
       lastName: lastName.value,
-      email:email.value,
-      password:password.value
+      email: email.value,
+      password: password.value,
+      accountType: "Customer",
+      mobileNumber: null,
+      image: null,
+      cart: [],
+      product: [],
+      orderIds: [],
+      address: {
+        street: "",
+        city: city.value,
+        governorate: governorate.value,
+      },mobileNumber:mobile.value
+    };
+    users.push(newuser);
+
+    /*
+janesmith@example.com
+anothersecurepassword456
+
+*/
+
+    localStorage.setItem("currentUser", JSON.stringify(newuser.id));
+    //    alert("saving in localstorage is done ");
+
+    //let user = GetUserById(newuser.id);
+    let products = JSON.parse(localStorage.getItem("GuestCart")) || [];
+    //user.cart = [products] // set product from guestcart to cart
+    if (products.length > 0) {
+      newuser.cart = products;
     }
-    users.push(newuser); 
-    localStorage.setItem('users',JSON.stringify(users));
-//    alert("saving in localstorage is done ");
+    // then removing guestcart
+    // database1.guestcart = [];
+    // localStorage.setItem("guestCart",JSON.stringify(database1.guestcart));
 
-
-
+    localStorage.setItem("users", JSON.stringify(users));
+    localStorage.setItem("GuestCart", JSON.stringify([]));
   }
+
+// check if guestcart having products or not if have set it in cart to this user 
+
 });
 
+//let guest = JSON.parse(localStorage.getItem("guestCart"));
+//database1.guestcart = []
+//localStorage.setItem("guestCart",JSON.stringify(database1.guestcart));
+//console.log(JSON.parse(localStorage.getItem("guestCart")));
 Array.from(inputs).forEach((element) => {
   element.addEventListener("input", function () {
     if (element.id === "firstName") {
@@ -143,18 +242,51 @@ Array.from(inputs).forEach((element) => {
       }
     }
 
+    if(element.id ==='Mobile'){
+      if(!isvalidmobile(element.value)){
+        mobileNumberError.innerHTML =
+          "Invalid mobile number format. Please enter a valid Egyptian mobile number starting with '+20' or '01', followed by 9 digits. Example: +201234567890 or 01234567890.";
+          mobile.style.border = "2px solid red";
+
+      }else{
+        mobileNumberError.innerHTML = "";
+        mobile.style.border = "";
+      }
+    }
+
+
     if (element.id === "email") {
       if (!isValidEmail(element.value)) {
         emailerror.innerHTML = "Please enter a valid email address";
         email.style.border = "2px solid red";
       } else if (getemail(element.value)) {
-        emailerror.innerHTML = "This email already exists";
+        emailerror.innerHTML = "This email already exists please go login";
         email.style.border = "2px solid red";
       } else {
         emailerror.innerHTML = "";
         email.style.border = "";
       }
     }
+
+        if (element.id === "City") {
+          if (city.value === "") {
+            cityError.innerHTML = "please select city";
+            city.style.border = "2px solid red";
+          } else {
+            cityError.innerHTML = "";
+            city.style.border = "";
+          }
+        }
+        if (element.id === "Governorate") {
+          if (governorate.value === "") {
+            governorateError.innerHTML = "please select governorate";
+            city.style.border = "2px solid red";
+          } else {
+            governorateError.innerHTML = "";
+            governorate.style.border = "";
+          }
+        }
+
 
     if (element.id === "password") {
       if (!isValidPassword(element.value)) {
@@ -180,6 +312,9 @@ Array.from(inputs).forEach((element) => {
 });
 
 // end of event
+
+
+
 
 // formaction.addEventListener('submit',function(e){
 // if(firstName.value === '' || firstName.value.trim() ===""){
@@ -312,6 +447,71 @@ using prefentdefault
 
 function getemail(email) {
   let users = JSON.parse(localStorage.getItem("users"));
-  return users.find(p => p.email == email);
-  
+  return users.find((p) => p.email == email);
 }
+
+const citiesData = {
+  Cairo: [
+    "Cairo City Center",
+    "Helwan",
+    "Maadi",
+    "Zamalek",
+    "Nasr City",
+    "Heliopolis",
+  ],
+  Giza: ["Giza City", "6th of October City", "El-Agouza", "Imbaba", "Dokki"],
+  Alexandria: [
+    "Alexandria City",
+    "Montazah",
+    "Bahri",
+    "Smouha",
+    "Raml Station",
+  ],
+  Dakahlia: ["Mansoura", "Talkha", "Mit Ghamr", "Dikirnis", "Sinbillawin"],
+  Sharqia: ["Zagazig", "El-Hosaynia", "Belbeis", "Abu Hammad", "Faqous"],
+  "Port Said": ["Port Said City"],
+  Suez: ["Suez City", "Port Tawfik", "Ain Sokhna"],
+  Qena: ["Qena City", "Nag Hammadi", "Dandara", "Farshut"],
+  Aswan: ["Aswan City", "Nubia", "Kom Ombo", "Edfu"],
+  Ismailia: ["Ismailia City", "Fayed", "Abu Sultan"],
+  Luxor: ["Luxor City", "Karnak", "Thebes", "Esna"],
+  Assiut: ["Assiut City", "Abnoub", "Dairut", "Manfalut", "El-Ghanayem"],
+  Beheira: ["Damanhur", "Kafr El-Dawar", "Edco", "Shubrakhit", "Rosetta"],
+  Damietta: ["Damietta City", "Ras El-Bar", "Kafr Saad", "New Damietta"],
+  "Kafr El Sheikh": ["Kafr El Sheikh City", "Desouk", "Qalyub", "Beyala"],
+  Minya: ["Minya City", "Mallawi", "Bani Mazar", "Samalut"],
+  Monufia: ["Shibin El Kom", "Minuf", "Tala", "Ashmoun"],
+  Gharbia: ["Tanta", "Mahalla", "Kafr El Zayat", "Zefta","Samanoud"],
+  "Beni Suef": ["Beni Suef City", "Fayoum City", "El-Fashn", "Samasta"],
+  Fayoum: ["Fayoum City", "Ibshway", "Tameya", "Sennuris"],
+  Qalyubia: ["Benha", "Shubra El-Kheima", "Khosous", "Qalyub"],
+  Sohag: ["Sohag City", "Gerga", "Tahta", "Akhnas"],
+  "Red Sea": ["Hurghada", "Safaga", "El-Quseir", "Sharm El Sheikh"],
+  Matrouh: ["Marsa Matrouh", "El Alamein", "Sidi Abdel Rahman"],
+  "New Valley": ["Kharga", "Dakhla", "Paris"],
+  "South Sinai": ["Sharm El Sheikh", "Dahab", "Nuweiba", "Taba"],
+  "North Sinai": ["El-Arish", "Rafah", "Sheikh Zuweid"],
+};
+document.getElementById("Governorate").addEventListener("change", function () {
+  const governorateSelect = this;
+  const citySelect = document.getElementById("City");
+  const selectedGovernorate = governorateSelect.value;
+
+  // Clear existing cities
+  citySelect.innerHTML =
+    '<option value="" disabled selected>Select City</option>';
+
+  // If a governorate is selected, populate the cities
+  if (selectedGovernorate) {
+    const cities = citiesData[selectedGovernorate];
+
+    cities.forEach(function (city) {
+      const option = document.createElement("option");
+      option.value = city;
+      option.textContent = city;
+      citySelect.appendChild(option);
+    });
+  }
+}); // end of change event 
+
+

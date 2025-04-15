@@ -1,4 +1,8 @@
+import { database, GetUserByEmail } from "./finalscript.js";
+import { loadnavbar } from "./navbar.js";
 window.addEventListener("load", function () {
+  let color = "White";
+  loadnavbar(color);
   AOS.init({
     duration: 1000, // Animation duration
     easing: "ease-out", // Easing function
@@ -66,7 +70,7 @@ window.addEventListener("load", function () {
     brnd.addEventListener("click", function (e) {
       e.preventDefault();
       let brandid = e.currentTarget.dataset.id;
-      window.location.href = `brand-detail.html?id=${brandid}`;
+      window.location.href = `/E-commerce/brand-details.html?id=${brandid}`;
     }); // end of event
   });
 
@@ -86,7 +90,7 @@ window.addEventListener("load", function () {
               src="${element.images[0]}"
               alt=""
             />
-            <p style="color: aqua">${element.gender}</p>
+            <p style="color: Brown">${element.gender}</p>
             <h5>${element.name}</h5>
             <p>EGP ${element.price}</p>
             <button class = "show-more" data-id = "${element.id}">view details</button>
@@ -130,119 +134,159 @@ window.addEventListener("load", function () {
   let btn = this.document.querySelectorAll(".show-more");
   btn.forEach((button) => {
     button.addEventListener("click", function (e) {
-      productid = e.target.dataset.id;
+      let productid = e.target.dataset.id;
       window.location.href = `/E-commerce/Product Details/details.html?id=${productid}`;
     }); // end of event
   }); // end of loaping
 
   // get email from session
 
-  let navv = this.document.getElementById("navv");
+  //   let navv = this.document.getElementById("navv");
 
-  let emailuser = this.sessionStorage.getItem("email");
-  console.log(emailuser);
-  // if no one login [session == null]
-  if (!emailuser) {
-    navv.style.display = "block";
-    navv.innerHTML = `
-            <nav class="navbar navbar-expand-lg  text-white">
-  <div class="container-fluid">
-    <!-- Left side -->
-    <div class="navbar-nav me-auto">
-      <a class="nav-link text-white" href="#">Brands</a>
-      <a class="nav-link text-white" href="#">Contact Us</a>
-    </div>
+  //   let emailuser = this.sessionStorage.getItem("email");
+  //   let specialuser = GetUserByEmail(emailuser); // get email and return user to get id from user
 
-    <!-- Center -->
-    <a class="navbar-brand mx-auto text-center text-white" href="#">
-      LC WAGIGI
-    </a>
+  //   //console.log(specialuser);
+  //   // if no one login [session == null]
+  //   if (!emailuser) {
+  //     navv.style.display = "block";
+  //     navv.innerHTML = `
+  //             <nav class="navbar navbar-expand-lg  text-white">
+  //   <div class="container-fluid">
+  //     <!-- Left side -->
+  //     <div class="navbar-nav me-auto">
+  //       <a class="nav-link text-white" href="#">Brands</a>
+  //       <a class="nav-link text-white" href="#">Contact Us</a>
+  //     </div>
 
-    <!-- Right side -->
-    <div class="navbar-nav ms-auto">
-     
-      <a class="nav-link text-white" href="#">Best Seller</a>
-      <a class="nav-link text-white" href="#">New Arrival</a>
-       <a class="nav-link text-white" href="/E-commerce/authentication/login/login.html" title="Sign In">
-        <i class="bi bi-person"></i>
-      </a>
-    </div>
-  </div>
-</nav>
+  //     <!-- Center -->
+  //     <a class="navbar-brand mx-auto text-center text-white" href="#">
+  //     Wristly
+  //     </a>
 
-  `;
-  return;
-  }
+  //     <!-- Right side -->
+  //     <div class="navbar-nav ms-auto">
 
-  // if user login already in session email
-  // get type from this mail to know this mail admin or not
-  let accounttype = getaccounttype(emailuser);
-  if (accounttype === "Admin") {
-    navv.style.display = "block";
-    navv.innerHTML = `
-  
-   <nav class="navbar navbar-expand-lg text-white " >
-    <div class="container-fluid">
-      <!-- Left side -->
-      <div class="navbar-nav me-auto">
-        <a class="nav-link text-white" href="#">Best Seller</a>
-        <a class="nav-link text-white" href="/E-commerce/Admin panel/home.html">Admin panel</a>
-      </div>
-  
-      <!-- Center -->
-      <a class="navbar-brand mx-auto text-center text-white" href="#">
-      LC WAGIGI
-      </a>
+  //       <a class="nav-link text-white" href="#">Best Seller</a>
+  //       <a class="nav-link text-white" href="#">New Arrival</a>
+  //        <a class="nav-link text-white" href="/E-commerce/authentication/login/login.html" title="Sign In">
+  //         <i class="bi bi-person"></i>
+  //       </a>
+  //        <a class="nav-link text-white" href="/E-commerce/Cart Design/Cart.html" title="Sign In">
+  //         <i class="bi bi-cart3"></i>
+  //       </a>
+  //     </div>
+  //   </div>
+  // </nav>
 
-      <!-- Right side -->
-      <div class="navbar-nav ms-auto sign-out">
-        <span class="nav-link text-white">Hello <strong>${emailuser}</strong></span>
-        <a id = "signout" class="nav-link text-white" href="#" title="Sign Out">
-          <i class="bi bi-box-arrow-right"></i>
-        </a>
-      </div>
-    </div>
-  </nav>
-  
-  
-  `;
-  } else {
-    navv.style.display = "block";
-    navv.innerHTML = `
-  
-   <nav class="navbar navbar-expand-lg text-white " >
-    <div class="container-fluid">
-      <!-- Left side -->
-      <div class="navbar-nav me-auto">
-        <a class="nav-link text-white" href="#">Best Seller</a>
-        <a class="nav-link text-white" href="#">New Arrival</a>
-      </div>
-  
-      <!-- Center -->
-      <a class="navbar-brand mx-auto text-center text-white" href="#">
-      LC WAGIGI
-      </a>
+  //   `;
+  //     return;
+  //   }
 
-      <!-- Right side -->
-      <div class="navbar-nav ms-auto sign-out">
-        <span class="nav-link text-white">Hello <strong>${emailuser}</strong></span>
-        <a id = "signout" class="nav-link text-white" href="#" title="Sign Out">
-          <i class="bi bi-box-arrow-right"></i>
-        </a>
-      </div>
-    </div>
-  </nav>
-  
-  `;
-  }
+  //   // if user login already in session email
+  //   // get type from this mail to know this mail admin or not
+  //   let accounttype = getaccounttype(emailuser);
+  //   if (accounttype === "Admin") {
+  //     navv.style.display = "block";
+  //     navv.innerHTML = `
 
-  // handle signout event
-  let signout = this.document.getElementById("signout");
-  signout.addEventListener("click", function () {
-    sessionStorage.removeItem("email");
-    navv.style.display = "none";
-    window.location.reload();
-  }); // end of event
+  //    <nav class="navbar navbar-expand-lg text-white " >
+  //     <div class="container-fluid">
+  //       <!-- Left side -->
+  //       <div class="navbar-nav me-auto">
+  //         <a class="nav-link text-white" href="#">Best Seller</a>
+  //         <a class="nav-link text-white" href="/E-commerce/Admin panel/home.html">Admin panel</a>
+  //       </div>
+
+  //       <!-- Center -->
+  //       <a class="navbar-brand mx-auto text-center text-white" href="#">
+  //       Wristly
+  //       </a>
+
+  //       <!-- Right side -->
+  //       <div class="navbar-nav ms-auto sign-out">
+  // <a style="text-decoration: none;" href="/E-commerce/userprofile/UserProfile.html?id=${specialuser.id}">
+  //           <span class="nav-link text-white">Hello <strong>${emailuser}</strong></span>
+  //         </a>        <a id = "signout" class="nav-link text-white" href="#" title="Sign Out">
+  //           <i class="bi bi-box-arrow-right"></i>
+  //         </a>
+  //       </div>
+  //     </div>
+  //   </nav>
+
+  //   `;
+  //   } else if (accounttype === "Seller") {
+  //     navv.style.display = "block";
+  //     navv.innerHTML = `
+
+  //  <nav class="navbar navbar-expand-lg text-white " >
+  //     <div class="container-fluid">
+  //       <!-- Left side -->
+  //       <div class="navbar-nav me-auto">
+  //         <a class="nav-link text-white" href="#">Best Seller</a>
+  //         <a class="nav-link text-white" href="/E-commerce/seller/index.html">Seller dashboard</a>
+  //       </div>
+
+  //       <!-- Center -->
+  //       <a class="navbar-brand mx-auto text-center text-white" href="#">
+  //       Wristly
+  //       </a>
+
+  //       <!-- Right side -->
+  //       <div class="navbar-nav ms-auto sign-out">
+  // <a style="text-decoration: none;" href="/E-commerce/userprofile/UserProfile.html?id=${specialuser.id}">
+  //           <span class="nav-link text-white">Hello <strong>${emailuser}</strong></span>
+  //         </a>        <a id = "signout" class="nav-link text-white" href="#" title="Sign Out">
+  //           <i class="bi bi-box-arrow-right"></i>
+  //         </a>
+  //       </div>
+  //     </div>
+  //   </nav>
+
+  // `;
+  //   } else {
+  //     navv.style.display = "block";
+  //     navv.innerHTML = `
+
+  //    <nav class="navbar navbar-expand-lg text-white " >
+  //     <div class="container-fluid">
+  //       <!-- Left side -->
+  //       <div class="navbar-nav me-auto">
+  //         <a class="nav-link text-white" href="#">Best Seller</a>
+  //         <a class="nav-link text-white" href="#">New Arrival</a>
+  //       </div>
+
+  //       <!-- Center -->
+  //       <a class="navbar-brand mx-auto text-center text-white" href="#">
+  //       Wristly
+  //       </a>
+
+  //       <!-- Right side -->
+  //       <div class="navbar-nav ms-auto sign-out">
+  //         <a style="text-decoration: none;" href="/E-commerce/userprofile/UserProfile.html?id=${specialuser.id}">
+  //           <span class="nav-link text-white">Hello <strong>${emailuser}</strong></span>
+  //         </a>
+  //         <a id = "signout" class="nav-link text-white" href="#" title="Sign Out">
+  //           <i class="bi bi-box-arrow-right"></i>
+  //         </a>
+  //           <a class="nav-link text-white" href="/E-commerce/Cart Design/Cart.html" title="cart">
+  //         <i class="bi bi-cart3"></i>
+  //       </a>
+  //       </div>
+  //     </div>
+  //   </nav>
+
+  //   `;
+  //   }
+
+  // // handle signout event
+  // let signout = this.document.getElementById("signout");
+  // signout.addEventListener("click", function () {
+  //   sessionStorage.removeItem("email");
+  //   localStorage.setItem("currentUser", JSON.stringify(null));
+  //   navv.style.display = "none";
+  //   window.location.reload();
+  // }); // end of event
 }); // end of load
 
 // let users = JSON.parse(localStorage.getItem("users"));
@@ -258,17 +302,17 @@ CRUD for accounts in db
 */
 
 // get account type using email
-let userss = JSON.parse(localStorage.getItem("users"));
-//console.log(userss);
-function getaccounttype(email) {
-  let type = null;
-  userss.forEach((element) => {
-    if (element.email == email) {
-      type = element.accountType;
-    }
-  });
-  return type;
-}
+// let userss = JSON.parse(localStorage.getItem("users"));
+// //console.log(userss);
+// function getaccounttype(email) {
+//   let type = null;
+//   userss.forEach((element) => {
+//     if (element.email == email) {
+//       type = element.accountType;
+//     }
+//   });
+//   return type;
+// }
 
 // let t = getaccounttype("janesmith@example.com");
 // console.log(t);
@@ -276,7 +320,15 @@ function getaccounttype(email) {
 //console.log(JSON.parse(localStorage.getItem("users")));
 // alicejohnson@example.com   // yetanothersecurepassword789
 
+// janesmith@example.com
+// anothersecurepassword456
 
 
 
-console.log(JSON.parse(localStorage.getItem("brands")));
+
+
+// current user 
+
+
+
+

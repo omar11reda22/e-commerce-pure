@@ -8,12 +8,21 @@ function isValidEmail(email) {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return emailRegex.test(email);
 }
+  let users = JSON.parse(localStorage.getItem("users"));
 
 //checked if mail found or not
 function getemail(email) {
-  let users = JSON.parse(localStorage.getItem("users"));
   return users.find((p) => p.email == email);
 }
+function getuserbyemail(email) {
+  let users = JSON.parse(localStorage.getItem("users"));
+   let use =  users.find((p) => p.email == email);
+  // console.log(use)
+;   return use.id;
+}
+// let em = "kharaofkhara45@gmail.com";
+// console.log(users.find(p => p.email == em));
+// console.log(getuserbyemail(em));
 
 document.getElementById("login").addEventListener("submit", function (e) {
   let isvalid = true;
@@ -63,6 +72,25 @@ document.getElementById("login").addEventListener("submit", function (e) {
     window.location.href = `/E-commerce/Home.html?email = ${encodeURIComponent(
       email.value
     )}`; // send mail to url
+
+    // save id to current user 
+let newuserid = getuserbyemail(email.value);
+localStorage.setItem('currentUser',JSON.stringify(newuserid));
+
+
+// after login check if guestcart have some products or not 
+
+let productss = JSON.parse(localStorage.getItem("GuestCart")) ||[];
+
+if(productss.length > 0){ // guestcart having some products 
+newuserid.cart = productss;
+}
+
+
+
+localStorage.setItem("GuestCart",JSON.stringify([]));
+
+
   }
 });
 
@@ -102,3 +130,11 @@ function checkpassword(email, password) {
 }
 
 //checkpassword("omaraladeeb45@gmail.com", "Omar@reda2468");
+
+/*
+put in nav 
+
+
+
+
+*/

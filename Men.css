@@ -6,45 +6,6 @@
 
 
 
-.nav {
-  position: fixed; 
-  top: 0;
-  left: 0;
-  width: 100%; 
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 14px;
-  padding: 20px 40px; 
-  z-index: 10; 
-  background-color: transparent; 
-  color: rgb(146, 152, 199);
-  transition: all 0.5s; 
-}
-
-.nav:hover {
-  background-color: white;
-  color: black;
-}
-
-.nav ul {
-  list-style-type: none;
-  display: flex;
-  gap: 20px;
-}
-
-.nav ul li {
-  cursor: pointer;
-  transition: color 0.3s ease; 
- 
-}
-
-
-
-
-.nav ul li:hover {
-  color: rgba(96, 45, 45, 0.991); 
-}
 
 .logo a {
   text-decoration: none;

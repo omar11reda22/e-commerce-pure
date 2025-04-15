@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Purple Admin</title>
+  <!-- plugins:css -->
+  <link rel="stylesheet" href="../../assets/vendors/mdi/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="../../assets/vendors/ti-icons/css/themify-icons.css">
+  <link rel="stylesheet" href="../../assets/vendors/css/vendor.bundle.base.css">
+  <link rel="stylesheet" href="../../assets/vendors/font-awesome/css/font-awesome.min.css">
+  <!-- endinject -->
+  <!-- Plugin css for this page -->
+  <!-- End Plugin css for this page -->
+  <!-- inject:css -->
+  <!-- endinject -->
+  <!-- Layout styles -->
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <!-- End layout styles -->
+  <link rel="shortcut icon" href="../../assets/images/favicon.png" />
+
+
+  <!-- jQuery (if not already included) -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <!-- DataTables JS -->
+  <!-- <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script> -->
+
+
+  <!-- js file -->
+  <script src="analysis/analysis.js" type="Module"></script>
+
+  <style>
+    .error {
+      color: #dc3545;
+      font-size: 12px;
+    }
+
+    input.form-control.error {
+      border-color: #dc3545;
+      background-color: #f8d7da;
+    }
+
+    #sidebar {
+      background-color: #004985;
+    }
+    #mainCotent {
+      background-color: #e4eff7 !important;
+
+    }
+    #icon {
+      box-shadow: 1px 1px 15px #4A4947;
+      /* box-shadow: -5px -5px 5px #4A4947; */
+    }
+    
+    
+    #btnSubmit 
+    {
+      background-color: #004985;
+      border: 0;
+      
+    }
+    #BackToList
+    {
+      color: #004985 !important;
+    }
+
+    /* body {
+  background-color: #f5e5d8; 
+}
+ */
+  .card {
+    background-color: #ffffff; 
+    
+  }
+
+  /* .card .card-body h4, .card .card-body h2 {
+    color: #004985; 
+  } */
+/* 
+  .card .card-body i {
+    color: #004985; 
+  } */
+
+
+
+        body {
+            background-color: #f5e8d7; 
+        } 
+
+        #card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            height: 180px;
+        }
+
+        /* .card-total {
+            background-color: #6c757d; 
+            color: #ffffff; 
+        }
+
+        .card-most {
+            background-color: #4f7d5d; 
+            color: #ffffff; 
+        }
+
+        .card-least {
+            background-color: #c4807e; 
+            color: #ffffff; 
+        } */
+/* 
+        .card #card-body {
+            text-align: center;
+            font-weight: bold;
+        } */
+        .sidebarr a {
+      color: rgba(255, 255, 255, 0.881) !important;
+    }
+
+    .sidebarr li:hover 
+    {
+      background-color: #e4eff7 !important;
+    }
+
+#headTable {
+  text-align: center;
+}
+
+
+  </style>
+
+
+<!-- DataTables CSS -->
+<!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css"> -->
+
+
+</head>
+
+<body>
+  <section class="navv" id="navv">
+      
+        </section>
+  <div class="container-scroller">
+   
+    <div class="container-fluid page-body-wrapper">
+      <!-- <nav class="sidebar sidebar-offcanvas" id="sidebar">
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link" href="../../index.html">
+              <span class="menu-title">Dashboard</span>
+              <i class="mdi mdi-home menu-icon"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./buttons.html">Create Product </a>
+          </li>
+        </ul>
+      </nav> -->
+
+
+      <div class="container-fluid page-body-wrapper">
+        <nav class="sidebar sidebar-offcanvas" id="sidebar">
+  
+          <ul class="nav sidebarr">
+            <li class="nav-item">
+              <a class="nav-link" href="./../../index.html">
+                <span class="menu-title">Dashboard</span>
+                <i class="mdi mdi-home menu-icon"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./../ui-features/buttons.html">Create Product 
+                <i class="mdi mdi-plus-circle menu-icon"></i>
+              </a>
+            </li>
+  
+  
+            <li class="nav-item">
+              <a class="nav-link" href="./../ui-features/SalesManagement.html">Sales Management
+                <i class="mdi mdi-chart-line menu-icon"></i>
+  
+                 </a>
+            </li>
+  
+            <li class="nav-item">
+              <a class="nav-link" href="./../ui-features/BrandAnalytics.html">Brand Analytics
+                <i class="mdi mdi-graph menu-icon"></i>
+  
+  
+              </a>
+            </li>
+  
+            <li class="nav-item">
+              <a class="nav-link" href="./../ui-features/Geographic.html">Location Insights
+  
+                <i class="mdi mdi-map menu-icon"></i>
+              </a>
+            </li>
+  
+          </ul>
+        </nav>
+
+      <div class="main-panel">
+        <div class="content-wrapper" id="mainCotent">
+
+
+          <!-- <div class="container py-5">
+            <div class="row g-4">
+                <div class="col-md-4" id="card">
+                    <div class="card card-total">
+                        <div class="card-body" id="card-body">
+                            <h5 class="card-title">Total Earnings</h5>
+                            <p class="card-text display-6" id="earn"></p>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-md-4">
+                    <div class="card card-most" id="card">
+                        <div class="card-body" id="card-body">
+                            <h5 class="card-title">Most Shipped Product</h5>
+                            <p class="card-text" id="MShipped"></p>
+                            <p class="card-text" id="MnumOfSale">Number of Sales: </p>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-md-4">
+                    <div class="card card-least" id="card">
+                        <div class="card-body" id="card-body">
+                            <h5 class="card-title">Least Shipped Product</h5>
+                            <p class="card-text" id="LShipped"></p>
+                            <p class="card-text" id="LnumOfSale">Number of Sales: </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        
+        <!-- Cards Section -->
+<div class="container py-5">
+  <div class="card-header text-center pb-5 d-none" id="equalcase">
+    🏆 <strong>All Products Have Equal Number Of Sale</strong>
+</div>
+  <div class="row g-4">
+      <!-- Total Earnings Card -->
+      <div class="col-md-4">
+          <div class="card text-white bg-success shadow h-100">
+              <div class="card-header text-center">
+                  💵 <strong>Total Earnings</strong>
+              </div>
+              <div class="card-body text-center">
+                  <h5 class="card-title">Total Earnings</h5>
+                  <p class="card-text display-6" id="earn"></p>
+              </div>
+          </div>
+      </div>
+
+      <!-- Most Shipped Product Card -->
+      <div class="col-md-4">
+          <div class="card text-white bg-warning shadow h-100">
+              <div class="card-header text-center">
+                  📦 <strong>Most Shipped Product</strong>
+              </div>
+              <div class="card-body text-center">
+                  <h5 class="card-title">Most Shipped Product</h5>
+                  <p class="card-text" id="MShipped"></p>
+                  <p class="card-text"><strong>Number of Sales:</strong> <span id="MnumOfSale"></span></p>
+              </div>
+          </div>
+      </div>
+
+      <!-- Least Shipped Product Card -->
+      <div class="col-md-4">
+          <div class="card text-white bg-danger shadow h-100">
+              <div class="card-header text-center">
+                  📉 <strong>Least Shipped Product</strong>
+              </div>
+              <div class="card-body text-center">
+                  <h5 class="card-title">Least Shipped Product</h5>
+                  <p class="card-text" id="LShipped"></p>
+                  <p class="card-text"><strong>Number of Sales:</strong> <span id="LnumOfSale"></span></p>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+
+
+          
+        <div class="row">
+          <div class="col-12 grid-margin">
+            <div class="card">
+              <div class="card-body">
+                <h4 class="card-title">Related Products</h4>
+                  <div class="table-responsive">
+                    <!-- <table id="example" class="table text-center">
+                      <thead>
+                        <tr>
+                          <th> Name </th>
+                          <th> Price </th>
+                          <th> Number Of Sales </th>
+                          <th> Stock </th>
+                          <th> operation </th>
+                        </tr>
+                      </thead>
+                      <tbody id="productData">
+                      </tbody>
+                    </table> -->
+
+                    <table id="productTable" class="display nowrap table table-striped table-bordered text-center">
+                      <thead id="headTable">
+                        <tr>
+                          <th class="text-center">Name</th>
+                          <th class="text-center">Price</th>
+                          <th class="text-center"> previous Price </th>
+                          <th class="text-center">Number Of Sales</th>
+                          <th class="text-center">Stock</th>
+                          <th class="text-center">
+                            <a href="#" class="btn btn-sm btn-success" title="Make a Sale">
+                              <i class="fas fa-shopping-cart"></i> Sale
+                          </a>
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody id="productData">
+                      </tbody>
+                    </table>
+                    
+
+
+
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        <!-- main-panel ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+    <!-- jQuery (Required by DataTables) -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- DataTables JS -->
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
+
+
+    <!-- <script src="../../assets/vendors/js/vendor.bundle.base.js"></script> -->
+    <!-- endinject -->
+    <!-- Plugin js for this page -->
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <script src="../../assets/js/off-canvas.js"></script>
+    <script src="../../assets/js/misc.js"></script>
+    <script src="../../assets/js/settings.js"></script>
+    <script src="../../assets/js/todolist.js"></script>
+    <script src="../../assets/js/jquery.cookie.js"></script>
+    <script type="module" src="/E-commerce/navbar.js"></script>
+    <!-- endinject -->
+</body>
+
+</html>
+
+
+

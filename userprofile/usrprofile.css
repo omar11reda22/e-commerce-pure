@@ -1,0 +1,52 @@
+body {
+    background-color: #f0f2f5;
+}
+
+.card {
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.breadcrumb {
+    background: #ffffff;
+    border-radius: 10px;
+}
+
+.card-header {
+    background-color: #032a53;
+    color: white;
+    font-weight: bold;
+}
+
+.btn-primary {
+    background-color: #032a53;
+    border: none;
+}
+
+.btn-outline-primary {
+    border-color:  #032a53;
+    color: #032a53;
+}
+
+.btn-outline-primary:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+.list-group-item {
+    border: none;
+    background-color: #f9f9f9;
+    margin-bottom: 5px;
+}
+
+.list-group-item:last-child {
+    margin-bottom: 0;
+}
+
+.rounded-pill {
+    font-size: 0.9rem;
+}
+
+.text-muted {
+    color: #6c757d !important;
+}

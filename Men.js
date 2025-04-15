@@ -1,3 +1,4 @@
+import { loadnavbar } from "./navbar.js";
 // fetch data from json File
 async function getData() {
   const url = "productData.json";
@@ -68,6 +69,8 @@ async function AppendData(jsonData) {
 }
 
 window.addEventListener("load", async function () {
+  let color = "White";
+  loadnavbar(color);
   // to append the data from the json file
   let jsonData = await getData();
   AppendData(jsonData);

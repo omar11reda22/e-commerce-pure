@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Purple Admin</title>
+  <!-- plugins:css -->
+  <link rel="stylesheet" href="../../assets/vendors/mdi/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="../../assets/vendors/ti-icons/css/themify-icons.css">
+  <link rel="stylesheet" href="../../assets/vendors/css/vendor.bundle.base.css">
+  <link rel="stylesheet" href="../../assets/vendors/font-awesome/css/font-awesome.min.css">
+  <!-- endinject -->
+  <!-- Plugin css for this page -->
+  <!-- End Plugin css for this page -->
+  <!-- inject:css -->
+  <!-- endinject -->
+  <!-- Layout styles -->
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <!-- End layout styles -->
+  <link rel="shortcut icon" href="../../assets/images/favicon.png" />
+
+
+  <!-- jQuery (if not already included) -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <!-- DataTables JS -->
+  <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+
+
+  <!-- js file -->
+  <script src="Geographic/Geographic.js" type="Module"></script>
+
+  <style>
+    .error {
+      color: #dc3545;
+      font-size: 12px;
+    }
+
+    input.form-control.error {
+      border-color: #dc3545;
+      background-color: #f8d7da;
+    }
+
+    #sidebar {
+      background-color: #004985;
+    }
+    #mainCotent {
+      background-color: #e4eff7 !important;
+
+    }
+    #icon {
+      box-shadow: 1px 1px 15px #4A4947;
+      /* box-shadow: -5px -5px 5px #4A4947; */
+    }
+    
+    
+    #btnSubmit 
+    {
+      background-color: #004985;
+      border: 0;
+      
+    }
+    #BackToList
+    {
+      color: #004985 !important;
+    }
+
+    body {
+  background-color: #f5e5d8; /* Light brown background */
+}
+
+.card {
+    background-color: #ffffff; /* Light brown card background */
+    /* border: 1px solid #004985;  */
+  }
+
+  .card .card-body h4, .card .card-body h2 {
+    color: #004985; 
+  }
+
+  .card .card-body i {
+    color: #004985; 
+  }
+
+
+        body {
+            background-color: #f5e8d7; 
+        } 
+
+        #card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            height: 180px;
+        }
+
+        .card-total {
+            background-color: #6c757d; 
+            color: #ffffff; 
+        }
+
+        .card-most {
+            background-color: #4f7d5d; 
+            color: #ffffff; 
+        }
+
+        .card-least {
+            background-color: #c4807e; 
+            color: #ffffff; 
+        }
+
+        .card #card-body {
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .sidebarr a {
+      color: rgba(255, 255, 255, 0.881) !important;
+    }
+
+    .sidebarr li:hover 
+    {
+      background-color: #e4eff7 !important;
+    }
+
+
+
+
+  </style>
+
+
+<!-- DataTables CSS -->
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
+
+
+</head>
+
+<body>
+  <section class="navv" id="navv">
+      
+
+
+        </section>
+  <div class="container-scroller">
+   
+    <div class="container-fluid page-body-wrapper">
+      <!-- <nav class="sidebar sidebar-offcanvas" id="sidebar">
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link" href="../../index.html">
+              <span class="menu-title">Dashboard</span>
+              <i class="mdi mdi-home menu-icon"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./buttons.html">Create Product </a>
+          </li>
+        </ul>
+      </nav> -->
+
+
+      <div class="container-fluid page-body-wrapper">
+        <nav class="sidebar sidebar-offcanvas" id="sidebar">
+  
+          <ul class="nav sidebarr">
+            <li class="nav-item">
+              <a class="nav-link" href="./../../index.html">
+                <span class="menu-title">Dashboard</span>
+                <i class="mdi mdi-home menu-icon"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./../ui-features/buttons.html">Create Product 
+                <i class="mdi mdi-plus-circle menu-icon"></i>
+              </a>
+            </li>
+  
+  
+            <li class="nav-item">
+              <a class="nav-link" href="./../ui-features/SalesManagement.html">Sales Management
+                <i class="mdi mdi-chart-line menu-icon"></i>
+  
+                 </a>
+            </li>
+  
+            <li class="nav-item">
+              <a class="nav-link" href="./../ui-features/BrandAnalytics.html">Brand Analytics
+                <i class="mdi mdi-graph menu-icon"></i>
+  
+  
+              </a>
+            </li>
+  
+            <li class="nav-item">
+              <a class="nav-link" href="./../ui-features/Geographic.html">Location Insights
+  
+                <i class="mdi mdi-map menu-icon"></i>
+              </a>
+            </li>
+  
+          </ul>
+        </nav>
+
+      <div class="main-panel">
+        <div class="content-wrapper" id="mainCotent">
+
+
+          <div class="container py-5">
+            <div class="row g-4">
+
+              <div class="container ">
+                <div class="row">
+                    <!-- Highest Revenue Governorate -->
+                    <div class="col-md-6 mb-4">
+                        <div class="card text-white bg-primary shadow h-100">
+                            <div class="card-header text-center">
+                                🏆 <strong>Highest Revenue Governorate</strong>
+                            </div>
+                            <div class="card-body text-center">
+                                <h3 id="highestRevenueGov">Governorate Name</h3>
+                                <p><strong>Total Revenue:</strong> <span id="highestRevenueAmount"></span></p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Lowest Revenue Governorate -->
+                    <div class="col-md-6 mb-4">
+                        <div class="card text-white bg-info shadow h-100">
+                            <div class="card-header text-center">
+                                📉 <strong>Lowest Revenue Governorate</strong>
+                            </div>
+                            <div class="card-body text-center">
+                                <h3 id="lowestRevenueGov">Governorate Name</h3>
+                                <p><strong>Total Revenue:</strong> <span id="lowestRevenueAmount"></span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+        <div class="row pb-5">
+          <div class="container">
+            <div class="row">
+              <!-- Your existing HTML -->
+            </div>
+            <div class="row">
+              <div class="col-12">
+                <canvas id="locationComparisonChart"></canvas>
+                <div id="noDataMessage" style="display: none; text-align: center; color: red;">No data available for analysis.</div>
+              </div>
+            </div>
+          </div>
+          
+
+        </div>
+
+
+
+
+          
+        <div class="row">
+          <div class="col-12 grid-margin">
+            <div class="card">
+              <div class="card-body">
+                <h4 class="card-title">Related Products</h4>
+                  <div class="table-responsive">
+                    <!-- <table id="example" class="table text-center">
+                      <thead>
+                        <tr>
+                          <th> Name </th>
+                          <th> Price </th>
+                          <th> Number Of Sales </th>
+                          <th> Stock </th>
+                          <th> operation </th>
+                        </tr>
+                      </thead>
+                      <tbody id="productData">
+                      </tbody>
+                    </table> -->
+<!-- 
+                    <table id="productTable" class="display nowrap table table-striped table-bordered text-center">
+                      <thead>
+                        <tr>
+                          <th>Governorate</th>
+                          <th>Total Revenue</th>
+                          <th> Transactions </th>
+                          <th>Items Sold</th>
+                          <th>Top Product</th>
+                        </tr>
+                      </thead>
+                      <tbody id="productData">
+                      </tbody>
+                    </table> -->
+                    <table id="productTable" class="display nowrap table table-striped table-bordered text-center">
+                      <thead>
+                          <tr>
+                              <th class="text-center">Governorate</th>
+                              <th class="text-center">Total Revenue</th>
+                              <th class="text-center">Transactions</th>
+                              <th class="text-center">Items Sold</th>
+                              <th class="text-center">Top Product</th>
+                          </tr>
+                      </thead>
+                      <tbody id="productData">
+                          <!-- Data will be dynamically loaded via JavaScript -->
+                      </tbody>
+                  </table>
+                  
+
+
+
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        <!-- main-panel ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+    <!-- <script src="../../assets/vendors/js/vendor.bundle.base.js"></script> -->
+
+        <!-- DataTables CSS -->
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+        <!-- jQuery (Required by DataTables) -->
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <!-- DataTables JS -->
+        <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    
+        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
+    
+
+
+
+    <!-- endinject -->
+    <!-- Plugin js for this page -->
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <script src="../../assets/js/off-canvas.js"></script>
+    <script src="../../assets/js/misc.js"></script>
+    <script src="../../assets/js/settings.js"></script>
+    <script src="../../assets/js/todolist.js"></script>
+    <script src="../../assets/js/jquery.cookie.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="module" src="/E-commerce/navbar.js"></script>
+
+    <!-- endinject -->
+</body>
+
+</html>
+
+
+
